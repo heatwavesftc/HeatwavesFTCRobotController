@@ -1,5 +1,5 @@
 package org.firstinspires.ftc.teamcode;
 
 public class test {
-    public int test = 60;
+    public char test = '6';
 }
