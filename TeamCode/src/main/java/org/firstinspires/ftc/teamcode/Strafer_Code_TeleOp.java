@@ -3,13 +3,12 @@ package org.firstinspires.ftc.teamcode;
 import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.gamepad1;
 import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.hardwareMap;
 
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.Range;
 
 @TeleOp(name="Basic Movement", group="Iterative Opmode")
-public class Strafer_Code {
+public class Strafer_Code_TeleOp {
     // Declare motors
     DcMotor motorLeftBack;
     DcMotor motorLeftFront;
