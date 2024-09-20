@@ -3,12 +3,13 @@ package org.firstinspires.ftc.teamcode;
 import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.gamepad1;
 import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.hardwareMap;
 
+
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.Range;
 
-@TeleOp(name="Basic Movement", group="Iterative Opmode")
-public class Strafer_Code_TeleOp {
+@TeleOp(name="Basic Movement with Improved Strafe", group="Iterative Opmode")
+public class improvedStrafingCodeGeneral {
     // Declare motors
     DcMotor motorLeftBack;
     DcMotor motorLeftFront;
@@ -29,12 +30,16 @@ public class Strafer_Code_TeleOp {
         motorLeftFront.setDirection(DcMotor.Direction.FORWARD);
         motorRightBack.setDirection(DcMotor.Direction.REVERSE);
         motorRightFront.setDirection(DcMotor.Direction.REVERSE);
+
     }
 
+
     public void loop() {
-// Get the values from the gamepad joysticks
+        // Get the values from the gamepad joysticks
         double drive = -gamepad1.left_stick_y;  // Forward/Backward (inverted Y-axis)
-        double strafe = gamepad1.left_stick_x;  // Strafing (left/right)
+        // Adjust strafe sensitivity as needed
+        double strafeSensitivity = 0.8;
+        double strafe = gamepad1.left_stick_x * strafeSensitivity;  // Strafing (left/right) with adjusted sensitivity
 
         // Calculate power for each motor
         double leftFrontPower = drive + strafe;
@@ -42,7 +47,7 @@ public class Strafer_Code_TeleOp {
         double rightFrontPower = drive - strafe;
         double rightBackPower = drive + strafe;
 
-        // Apply power to the motors
+        // Apply power to the motors, ensuring it's within the range of -1 to 1
         motorLeftFront.setPower(Range.clip(leftFrontPower * driveSpeed, -1.0, 1.0));
         motorLeftBack.setPower(Range.clip(leftBackPower * driveSpeed, -1.0, 1.0));
         motorRightFront.setPower(Range.clip(rightFrontPower * driveSpeed, -1.0, 1.0));
