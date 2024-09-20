@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.Range;
 
 @TeleOp(name="Basic Movement", group="Iterative Opmode")
-public class Strafer_Code_TeleOp {
+public class Old_Strafing_General_Code {
     // Declare motors
     DcMotor motorLeftBack;
     DcMotor motorLeftFront;
