@@ -3,13 +3,13 @@ package org.firstinspires.ftc.teamcode;
 import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.gamepad1;
 import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.hardwareMap;
 
-
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.Range;
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 
-@TeleOp(name="Basic Movement with Improved Strafe", group="Iterative Opmode")
-public class improvedStrafingCodeUpDownTeleOp {
+@TeleOp(name="Basic Movement with Improved Strafe and Telemetry", group="Iterative Opmode")
+public class improvedStrafingCodeUpDownTeleOp extends OpMode {
     // Declare motors
     DcMotor motorLeftBack;
     DcMotor motorLeftFront;
@@ -18,6 +18,7 @@ public class improvedStrafingCodeUpDownTeleOp {
 
     private double driveSpeed = 1.0;
 
+    @Override
     public void init() {
         // Initialize motors
         motorLeftBack = hardwareMap.dcMotor.get("left_back_Motor");
@@ -31,9 +32,11 @@ public class improvedStrafingCodeUpDownTeleOp {
         motorRightBack.setDirection(DcMotor.Direction.REVERSE);
         motorRightFront.setDirection(DcMotor.Direction.REVERSE);
 
+        // Telemetry to show that initialization is complete
+        telemetry.addData("Status", "Initialized");
     }
 
-
+    @Override
     public void loop() {
         // Get the values from the gamepad joysticks
         double drive = -gamepad1.left_stick_y;  // Forward/Backward (inverted Y-axis)
@@ -59,5 +62,13 @@ public class improvedStrafingCodeUpDownTeleOp {
         } else {
             driveSpeed = 1.0;
         }
+
+        // Telemetry to provide real-time feedback
+        telemetry.addData("Left Front Power", motorLeftFront.getPower());
+        telemetry.addData("Left Back Power", motorLeftBack.getPower());
+        telemetry.addData("Right Front Power", motorRightFront.getPower());
+        telemetry.addData("Right Back Power", motorRightBack.getPower());
+        telemetry.addData("Drive Speed", driveSpeed);
+        telemetry.update();
     }
 }
