@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 @TeleOp
 
-public class basicMovementForwardBackward extends LinearOpMode {
+public class forwardBackwardTeleOp extends LinearOpMode {
     private DcMotor LeftDrive;
     private DcMotor RightDrive;
 
