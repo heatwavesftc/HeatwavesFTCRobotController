@@ -9,7 +9,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.Range;
 
 @TeleOp(name="Basic Movement with Improved Strafe", group="Iterative Opmode")
-public class improvedStrafingCode {
+public class improvedStrafingCodeGeneral {
     // Declare motors
     DcMotor motorLeftBack;
     DcMotor motorLeftFront;
