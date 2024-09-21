@@ -3,13 +3,14 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import org.firstinspires.ftc.teamcode.hardwareMecanum
 
 
 @TeleOp(name="Mecanum: Teleop", group="Mecanum")
 public class mecanumTeleopTurning extends LinearOpMode {
 
     /* Declare OpMode members. */
-   HardwareMecanum robot = new HardwareMecanum(); //Use a Mecanum's hardware
+   hardwareMecanum robot = new hardwareMecanum(); //Use a Mecanum's hardware
 
     @Override
     public void runOpMode() {
