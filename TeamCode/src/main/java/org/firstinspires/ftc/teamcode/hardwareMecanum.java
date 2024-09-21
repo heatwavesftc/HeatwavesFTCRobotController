@@ -1,11 +1,10 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-public class HardwareMecanum {
+public class hardwareMecanum {
     public DcMotor motorLeftBack = null;
     public DcMotor motorLeftFront = null;
     public DcMotor motorRightBack = null;
@@ -16,7 +15,7 @@ public class HardwareMecanum {
     private ElapsedTime period = new ElapsedTime();
 
     // Constructor
-    public HardwareMecanum(){
+    public hardwareMecanum(){
 
     }
 
@@ -49,5 +48,11 @@ public class HardwareMecanum {
         motorRightBack.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         motorLeftBack.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
+    }
+    public void stopMotors() {
+        motorLeftBack.setPower(0);
+        motorLeftFront.setPower(0);
+        motorRightBack.setPower(0);
+        motorRightFront.setPower(0);
     }
 }
