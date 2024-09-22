@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 
 @TeleOp(name="Mecanum: Teleop", group="Mecanum")
-public class mecanumTeleop extends LinearOpMode {
+public class mecanumTeleopStrafing extends LinearOpMode {
 
     /* Declare OpMode members. */
    hardwareMecanum robot = new hardwareMecanum(); //Use a Mecanum's hardware
@@ -15,6 +15,7 @@ public class mecanumTeleop extends LinearOpMode {
     public void runOpMode() {
         double x1; // left/Right
         double y1; // front/back
+        double turnPower;
 
         double fortyFiveInRads = -Math.PI/4;
         double cosine45 = Math.cos(fortyFiveInRads);
@@ -44,17 +45,19 @@ public class mecanumTeleop extends LinearOpMode {
             y2 = y1*cosine45 + x1*sine45;
             x2 = x1*cosine45 - y1*sine45;
 
+            turnPower = gamepad1.right_stick_x; /* Captures the horizontal input on gamepad1,
+            which controls the robots turning */
 
             // Output the safe vales to the motor drives.
-            robot.motorLeftFront.setPower(x2);
-            robot.motorLeftBack.setPower(x2);
-
-            robot.motorRightFront.setPower(y2);
-            robot.motorRightBack.setPower(y2);
+            robot.motorLeftFront.setPower(x2 + turnPower);
+            robot.motorLeftBack.setPower(x2 +turnPower);
+            robot.motorRightFront.setPower(y2 +turnPower);
+            robot.motorRightBack.setPower(y2+turnPower);
 
             // Send telemetry message to signify robot running;
             telemetry.addData("x1",  "%.2f", x1);
             telemetry.addData("y1", "%.2f", y1);
+            telemetry.addData("Turn Power", "%.2f", turnPower);
             telemetry.update();
 
             // Pace this loop
