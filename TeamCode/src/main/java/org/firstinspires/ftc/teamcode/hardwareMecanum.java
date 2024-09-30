@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
@@ -30,11 +31,11 @@ public class hardwareMecanum {
         motorRightBack =  hwMap.get(DcMotor.class, "BR");
         motorRightFront =  hwMap.get(DcMotor.class, "FR");
 
-        /*
+
         motorLeftBack.setDirection(DcMotorSimple.Direction.REVERSE);
         motorLeftFront.setDirection(DcMotorSimple.Direction.REVERSE);
         motorRightBack.setDirection(DcMotorSimple.Direction.FORWARD);
-        motorRightFront.setDirection(DcMotorSimple.Direction.FORWARD);*/
+        motorRightFront.setDirection(DcMotorSimple.Direction.FORWARD);
 
         // Set all motors to zero power
         motorRightFront.setPower(0);
