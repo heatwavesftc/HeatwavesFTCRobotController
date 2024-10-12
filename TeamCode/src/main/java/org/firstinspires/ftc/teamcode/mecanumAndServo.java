@@ -30,10 +30,10 @@ public class mecanumAndServo extends OpMode {
     @Override
     public void init() {
         //motors
-        motorRightFront = hardwareMap.get(DcMotor.class, "motorRightFront");
-        motorRightBack = hardwareMap.get(DcMotor.class, "MotorRightBack");
-        motorLeftBack = hardwareMap.get(DcMotor.class, "motorLeftBack");
-        motorLeftFront = hardwareMap.get(DcMotor.class, "motorLeftFront");
+        motorRightFront = hardwareMap.get(DcMotor.class, "FR");
+        motorRightBack = hardwareMap.get(DcMotor.class, "BR");
+        motorLeftBack = hardwareMap.get(DcMotor.class, "BL");
+        motorLeftFront = hardwareMap.get(DcMotor.class, "FL");
         //servo
         servo = hardwareMap.get(Servo.class, "servo");
     }
