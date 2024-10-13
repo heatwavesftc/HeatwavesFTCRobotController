@@ -45,9 +45,16 @@ public class mecanumAndServo extends OpMode {
 
     @Override
     public void loop() {
-        if (gamepad1.y){
+        moveDriveTrain();
+
+
+
+
+
+
+        if (gamepad1.a){
             servo.setPosition(1);
-        } else if (gamepad1.x) {
+        } else if (gamepad1.b) {
             servo.setPosition(0.2);
         }
     }

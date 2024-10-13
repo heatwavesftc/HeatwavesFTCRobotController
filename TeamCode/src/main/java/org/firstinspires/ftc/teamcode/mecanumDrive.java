@@ -41,6 +41,6 @@ public class mecanumDrive extends OpMode {
 
     @Override
     public void loop() {
-
+        moveDriveTrain();
     }
 }
