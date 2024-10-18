@@ -23,8 +23,8 @@ public class mecanumAndServo extends OpMode {
 
         motorRightFront.setPower(-pivot + (-vertical + horizontal));
         motorRightBack.setPower(-pivot + (-vertical - horizontal));
-        motorLeftBack.setPower(-pivot + (-vertical + horizontal));
-        motorLeftFront.setPower(-pivot + (-vertical - horizontal));
+        motorLeftBack.setPower(-pivot + (vertical + horizontal));
+        motorLeftFront.setPower(-pivot + (vertical - horizontal));
     }
 
     @Override
