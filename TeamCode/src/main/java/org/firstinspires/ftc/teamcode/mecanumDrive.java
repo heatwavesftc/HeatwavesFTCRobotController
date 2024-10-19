@@ -16,14 +16,14 @@ public class mecanumDrive extends OpMode {
         double vertical;
         double horizontal;
         double pivot;
-        vertical = gamepad1.left_stick_y;
+        vertical = -gamepad1.left_stick_y;
         horizontal = gamepad1.left_stick_x;
         pivot = gamepad1.right_stick_x;
 
         motorRightFront.setPower(-pivot + (-vertical + horizontal));
         motorRightBack.setPower(-pivot + (-vertical - horizontal));
-        motorLeftBack.setPower(-pivot + (-vertical + horizontal));
-        motorLeftFront.setPower(-pivot + (-vertical - horizontal));
+        motorLeftBack.setPower(-pivot + (vertical - horizontal));
+        motorLeftFront.setPower(-pivot + (vertical + horizontal));
     }
 
     @Override
