@@ -27,7 +27,12 @@ public class BasicAuto extends LinearOpMode {
         motorRightBack.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         motorLeftBack.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
+        motorLeftBack.setPower(0.2);
+        motorLeftFront.setPower(0.2);
+        motorRightFront.setPower(0.2);
+        motorRightBack.setPower(0.2);
 
+        sleep(3000);
 
         motorRightBack.setDirection(DcMotorSimple.Direction.REVERSE);
         motorRightFront.setDirection(DcMotorSimple.Direction.REVERSE);

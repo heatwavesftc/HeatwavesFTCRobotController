@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 @Autonomous(name = "MoveForward5cm", group = "Autonomous")
-public class chatGPT extends LinearOpMode {
+public class     chatGPT extends LinearOpMode {
 
     // Declare motors
     private DcMotor frontLeftMotor;
