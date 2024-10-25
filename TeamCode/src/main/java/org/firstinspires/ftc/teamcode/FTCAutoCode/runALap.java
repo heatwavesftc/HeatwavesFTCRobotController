@@ -21,27 +21,10 @@ public class runALap extends LinearOpMode {
         motorLeftBack = hardwareMap.get(DcMotor.class, "BL");
         motorLeftFront = hardwareMap.get(DcMotor.class, "FL");
 
-        /*motorRightFront.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        motorLeftFront.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        motorRightBack.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        motorLeftBack.setMode(DcMotor.RunMode.RUN_USING_ENCODER);*/
-
         motorRightBack.setDirection(DcMotorSimple.Direction.REVERSE);
         motorRightFront.setDirection(DcMotorSimple.Direction.REVERSE);
 
         waitForStart();
-
-
-//        motorRightFront.setTargetPosition(100);
-//        motorLeftFront.setTargetPosition(-100);
-//        motorRightBack.setTargetPosition(100);
-//        motorLeftBack.setTargetPosition(-100);
-//
-//        motorRightFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-//        motorLeftFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-//        motorRightBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-//        motorLeftBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-
 
         motorRightFront.setPower(0.3);
         motorLeftFront.setPower(0.3);
