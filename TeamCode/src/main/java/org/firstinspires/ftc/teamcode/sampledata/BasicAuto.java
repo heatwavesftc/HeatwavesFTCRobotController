@@ -34,8 +34,8 @@ public class BasicAuto extends LinearOpMode {
 
         sleep(3000);
 
-        motorRightBack.setDirection(DcMotorSimple.Direction.REVERSE);
-        motorRightFront.setDirection(DcMotorSimple.Direction.REVERSE);
+        motorRightBack.setDirection(DcMotorSimple.Direction.FORWARD);
+        motorRightFront.setDirection(DcMotorSimple.Direction.FORWARD);
 
         waitForStart();
 
