@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.sampledata;
+package org.firstinspires.ftc.teamcode.FTCAutoCode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -22,17 +22,10 @@ public class BasicAuto extends LinearOpMode {
         motorLeftBack = hardwareMap.get(DcMotor.class, "BL");
         motorLeftFront = hardwareMap.get(DcMotor.class, "FL");
 
-        motorRightFront.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        /*motorRightFront.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         motorLeftFront.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         motorRightBack.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        motorLeftBack.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-
-        motorLeftBack.setPower(0.2);
-        motorLeftFront.setPower(0.2);
-        motorRightFront.setPower(0.2);
-        motorRightBack.setPower(0.2);
-
-        sleep(3000);
+        motorLeftBack.setMode(DcMotor.RunMode.RUN_USING_ENCODER);*/
 
         motorRightBack.setDirection(DcMotorSimple.Direction.FORWARD);
         motorRightFront.setDirection(DcMotorSimple.Direction.FORWARD);
@@ -40,22 +33,31 @@ public class BasicAuto extends LinearOpMode {
         waitForStart();
 
 
-        motorRightFront.setTargetPosition(300);
-        motorLeftFront.setTargetPosition(300);
-        motorRightBack.setTargetPosition(300);
-        motorLeftBack.setTargetPosition(300);
+//        motorRightFront.setTargetPosition(100);
+//        motorLeftFront.setTargetPosition(-100);
+//        motorRightBack.setTargetPosition(100);
+//        motorLeftBack.setTargetPosition(-100);
+//
+//        motorRightFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+//        motorLeftFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+//        motorRightBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+//        motorLeftBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-        motorRightFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        motorLeftFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        motorRightBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        motorLeftBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-        motorRightFront.setPower(.2);
-        motorLeftFront.setPower(.2);
-        motorRightBack.setPower(.2);
-        motorLeftBack.setPower(.2);
+        motorRightFront.setPower(0.3);
+        motorLeftFront.setPower(0.3);
+        motorRightBack.setPower(0.3);
+        motorLeftBack.setPower(0.3);
 
-        sleep(3000);
+        sleep(1350);
+
+        motorRightBack.setPower(0.3);
+        motorRightFront.setPower(-0.3);
+        motorLeftBack.setPower(-0.3);
+        motorLeftFront.setPower(0.3);
+
+        sleep(900);
+
 
     }
     private void TravelDistance(int travel){
