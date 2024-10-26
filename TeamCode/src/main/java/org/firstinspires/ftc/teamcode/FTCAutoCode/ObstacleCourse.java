@@ -6,8 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 @Autonomous
-public class runALap extends LinearOpMode {
-    //Motors
+public class ObstacleCourse extends LinearOpMode {
     private DcMotor motorRightFront = null;
     private DcMotor motorRightBack = null;
     private DcMotor motorLeftFront = null;
@@ -21,40 +20,40 @@ public class runALap extends LinearOpMode {
         motorLeftBack = hardwareMap.get(DcMotor.class, "BL");
         motorLeftFront = hardwareMap.get(DcMotor.class, "FL");
 
+        /*motorRightFront.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        motorLeftFront.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        motorRightBack.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        motorLeftBack.setMode(DcMotor.RunMode.RUN_USING_ENCODER);*/
+
         motorRightBack.setDirection(DcMotorSimple.Direction.REVERSE);
         motorRightFront.setDirection(DcMotorSimple.Direction.REVERSE);
 
         waitForStart();
 
-        motorRightFront.setPower(0.3);
-        motorLeftFront.setPower(0.3);
-        motorRightBack.setPower(0.3);
-        motorLeftBack.setPower(0.3);
+        motorRightFront.setPower(-0.5);
+        motorLeftFront.setPower(0.5);
+        motorRightBack.setPower(0.5);
+        motorLeftBack.setPower(-0.5);
 
-        sleep(6500);
+        sleep(800);
 
-        motorRightBack.setPower(0.3);
-        motorRightFront.setPower(-0.3);
-        motorLeftBack.setPower(-0.3);
-        motorLeftFront.setPower(0.3);
+        motorRightBack.setPower(0.5);
+        motorRightFront.setPower(0.5);
+        motorLeftBack.setPower(0.5);
+        motorLeftFront.setPower(0.5);
 
-        sleep(6500);
+        sleep(1500);
 
-        motorRightBack.setPower(-0.3);
-        motorRightFront.setPower(-0.3);
-        motorLeftBack.setPower(-0.3);
-        motorLeftFront.setPower(-0.3);
+        motorRightFront.setPower(0.5);
+        motorLeftFront.setPower(-0.5);
+        motorRightBack.setPower(-0.5);
+        motorLeftBack.setPower(0.5);
 
-        sleep(6500);
-
-        motorRightBack.setPower(-0.3);
-        motorRightFront.setPower(0.3);
-        motorLeftBack.setPower(0.3);
-        motorLeftFront.setPower(-0.3);
-
-        sleep(6500);
-
+        sleep(800);
 
 
     }
+
 }
+
+
