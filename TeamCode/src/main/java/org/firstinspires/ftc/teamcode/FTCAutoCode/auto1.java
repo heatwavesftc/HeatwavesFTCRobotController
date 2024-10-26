@@ -33,49 +33,50 @@ public class auto1 extends LinearOpMode {
             motorLeftFront.setPower(0.6);
             motorRightBack.setPower(-0.6);
             motorLeftBack.setPower(0.6);
-            sleep(650);
+            sleep(625);
         //move forward
 
             motorRightBack.setPower(-0.6);
             motorRightFront.setPower(0.6);
             motorLeftBack.setPower(-0.6);
             motorLeftFront.setPower(0.6);
-            sleep(425);
+            sleep(400);
         //strafe right
 
             motorRightBack.setPower(-0.6);
             motorRightFront.setPower(0.6);
+            motorRightFront.setPower(0.6);
             motorLeftBack.setPower(-0.6);
             motorLeftFront.setPower(0.6);
-            sleep(1875);
+            sleep(1600);
         //strafe right
 
             motorRightBack.setPower(-0.3);
             motorRightFront.setPower(-0.3);
             motorLeftBack.setPower(0.3);
             motorLeftFront.setPower(0.3);
-            sleep (75);
+            sleep (50);
         //move forward
 
             motorRightBack.setPower(-0.6);
             motorRightFront.setPower(-0.6);
             motorLeftBack.setPower(-0.6);
             motorLeftFront.setPower(-0.6);
-            sleep(675);
+            sleep(650);
         //turn left
 
             motorRightBack.setPower(0.6);
             motorRightFront.setPower(-0.6);
             motorLeftBack.setPower(0.6);
             motorLeftFront.setPower(-0.6);
-            sleep(100);
+            sleep(75);
             //strafe left
 
             motorRightBack.setPower(-0.6);
             motorRightFront.setPower(-0.6);
             motorLeftBack.setPower(0.6);
             motorLeftFront.setPower(0.6);
-            sleep (2875);
+            sleep (2850);
             //move forward
         }
     }
