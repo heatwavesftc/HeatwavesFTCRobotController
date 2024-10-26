@@ -1,16 +1,17 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.TeleopCode;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.Servo;
 
 @TeleOp
-public class mecanumDrive extends OpMode {
-
-    DcMotor motorRightFront;
-    DcMotor motorRightBack;
-    DcMotor motorLeftFront;
-    DcMotor motorLeftBack;
+public class mecanumAndServo extends OpMode {
+    public DcMotor motorRightFront;
+    public DcMotor motorRightBack;
+    public DcMotor motorLeftFront;
+    public DcMotor motorLeftBack;
+    public Servo servo;
 
     public void moveDriveTrain(){
         double vertical;
@@ -20,18 +21,21 @@ public class mecanumDrive extends OpMode {
         horizontal = gamepad1.left_stick_x;
         pivot = gamepad1.right_stick_x;
 
-        motorRightFront.setPower(pivot + (-vertical + horizontal));
-        motorRightBack.setPower(pivot+ (-vertical - horizontal));
-        motorLeftBack.setPower(pivot + (vertical - horizontal));
-        motorLeftFront.setPower(pivot + (vertical + horizontal));
+        motorRightFront.setPower(-pivot + (-vertical + horizontal));
+        motorRightBack.setPower(-pivot + (-vertical - horizontal));
+        motorLeftBack.setPower(-pivot + (vertical - horizontal));
+        motorLeftFront.setPower(-pivot + (vertical + horizontal));
     }
 
     @Override
     public void init() {
+        //motors
         motorRightFront = hardwareMap.get(DcMotor.class, "FR");
         motorRightBack = hardwareMap.get(DcMotor.class, "BR");
         motorLeftBack = hardwareMap.get(DcMotor.class, "BL");
         motorLeftFront = hardwareMap.get(DcMotor.class, "FL");
+        //servo
+        servo = hardwareMap.get(Servo.class, "servo");
     }
 
     @Override
@@ -42,5 +46,16 @@ public class mecanumDrive extends OpMode {
     @Override
     public void loop() {
         moveDriveTrain();
+
+
+
+
+
+
+        if (gamepad1.a){
+            servo.setPosition(1);
+        } else if (gamepad1.b) {
+            servo.setPosition(0.2);
+        }
     }
 }

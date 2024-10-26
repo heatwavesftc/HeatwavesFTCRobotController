@@ -1,6 +1,8 @@
 package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+
+import org.firstinspires.ftc.teamcode.TeleopCode.hardwareMecanum;
 // This code brings the base class for OpMode and declares the class as Auto
 
 @Autonomous(name = "turningTeleOp")
