@@ -29,37 +29,54 @@ public class auto1 extends LinearOpMode {
 
             waitForStart();
 
-            motorRightFront.setPower(-0.3);
-            motorLeftFront.setPower(0.3);
+            motorRightFront.setPower(-0.6);
+            motorLeftFront.setPower(0.6);
+            motorRightBack.setPower(-0.6);
+            motorLeftBack.setPower(0.6);
+            sleep(650);
+        //move forward
+
+            motorRightBack.setPower(-0.6);
+            motorRightFront.setPower(0.6);
+            motorLeftBack.setPower(-0.6);
+            motorLeftFront.setPower(0.6);
+            sleep(425);
+        //strafe right
+
+            motorRightBack.setPower(-0.6);
+            motorRightFront.setPower(0.6);
+            motorLeftBack.setPower(-0.6);
+            motorLeftFront.setPower(0.6);
+            sleep(1875);
+        //strafe right
+
             motorRightBack.setPower(-0.3);
+            motorRightFront.setPower(-0.3);
             motorLeftBack.setPower(0.3);
-
-            sleep(1350);
-
-            motorRightBack.setPower(-0.3);
-            motorRightFront.setPower(0.3);
-            motorLeftBack.setPower(-0.3);
             motorLeftFront.setPower(0.3);
-            sleep(900);
+            sleep (75);
+        //move forward
 
+            motorRightBack.setPower(-0.6);
+            motorRightFront.setPower(-0.6);
+            motorLeftBack.setPower(-0.6);
+            motorLeftFront.setPower(-0.6);
+            sleep(675);
+        //turn left
 
-            motorRightBack.setPower(-0.3);
-            motorRightFront.setPower(0.3);
-            motorLeftBack.setPower(-0.3);
-            motorLeftFront.setPower(0.3);
-            sleep(3800);
+            motorRightBack.setPower(0.6);
+            motorRightFront.setPower(-0.6);
+            motorLeftBack.setPower(0.6);
+            motorLeftFront.setPower(-0.6);
+            sleep(100);
+            //strafe left
 
-            motorRightBack.setPower(-0.3);
-            motorRightFront.setPower(-0.3);
-            motorLeftBack.setPower(0.3);
-            motorLeftFront.setPower(0.3);
-            sleep (100);
-
-            motorRightBack.setPower(-0.3);
-            motorRightFront.setPower(-0.3);
-            motorLeftBack.setPower(-0.3);
-            motorLeftFront.setPower(-0.3);
-            sleep(1000);
+            motorRightBack.setPower(-0.6);
+            motorRightFront.setPower(-0.6);
+            motorLeftBack.setPower(0.6);
+            motorLeftFront.setPower(0.6);
+            sleep (2875);
+            //move forward
         }
     }
 
