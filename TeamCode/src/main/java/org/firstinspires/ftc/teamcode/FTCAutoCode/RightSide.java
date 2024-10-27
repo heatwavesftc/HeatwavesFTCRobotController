@@ -27,18 +27,21 @@ public class RightSide extends LinearOpMode {
 
         waitForStart();
 
+        //Forward
         motorRightFront.setPower(-0.4);
         motorLeftFront.setPower(0.4);
         motorRightBack.setPower(-0.4);
         motorLeftBack.setPower(0.4);
         sleep(1125);
 
+        //Strafe Left
         motorRightBack.setPower(0.4);
         motorRightFront.setPower(-0.4);
         motorLeftBack.setPower(0.4);
         motorLeftFront.setPower(-0.4);
         sleep(675);
 
+        //
         motorRightBack.setPower(-0.4);
         motorRightFront.setPower(0.4);
         motorLeftBack.setPower(-0.4);
