@@ -27,40 +27,72 @@ public class RightSide extends LinearOpMode {
 
         waitForStart();
 
-        motorRightFront.setPower(-0.4);
-        motorLeftFront.setPower(0.4);
-        motorRightBack.setPower(-0.4);
-        motorLeftBack.setPower(0.4);
+        //Forward
+        power(4.0);
         sleep(1125);
+        motorLeftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        motorLeftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        motorRightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        motorRightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
+        //Strafe Left
         motorRightBack.setPower(0.4);
         motorRightFront.setPower(-0.4);
         motorLeftBack.setPower(0.4);
         motorLeftFront.setPower(-0.4);
         sleep(675);
+        motorLeftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        motorLeftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        motorRightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        motorRightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
+        //Back
         motorRightBack.setPower(-0.4);
         motorRightFront.setPower(0.4);
         motorLeftBack.setPower(-0.4);
         motorLeftFront.setPower(0.4);
         sleep(2500);
+        motorLeftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        motorLeftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        motorRightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        motorRightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         motorRightBack.setPower(0.3);
         motorRightFront.setPower(0.3);
         motorLeftBack.setPower(-0.3);
         motorLeftFront.setPower(-0.3);
         sleep(875);
+        motorLeftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        motorLeftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        motorRightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        motorRightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         motorRightBack.setPower(0.5);
         motorRightFront.setPower(-0.5);
         motorLeftFront.setPower(-0.5);
         motorLeftBack.setPower(0.5);
         sleep(3665);
+        motorLeftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        motorLeftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        motorRightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        motorRightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         motorRightFront.setPower(-0.4);
         motorLeftBack.setPower(-0.4);
         motorRightBack.setPower(-0.4);
         motorLeftFront.setPower(-0.4);
         sleep(1300);
+        motorLeftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        motorLeftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        motorRightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        motorRightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
     }
+
+    private void power(double speed) {
+        motorRightBack.setPower(-speed);
+        motorRightFront.setPower(-speed);
+        motorLeftBack.setPower(speed);
+        motorLeftFront.setPower(speed);
+    }
+
 }
