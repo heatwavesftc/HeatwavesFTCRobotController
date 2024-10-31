@@ -16,7 +16,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.CurrentUnit;
 
 @TeleOp
-//@Disabled
+
 public class mecanumAndServo extends LinearOpMode {
 
     /* Declare OpMode members. */
