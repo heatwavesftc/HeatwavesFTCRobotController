@@ -26,7 +26,7 @@ public class mecanumAndServo extends LinearOpMode {
     public DcMotor  rightBackDrive   = null;
     public DcMotor  armMotor         = null; //the arm motor
     public DcMotor  liftMotor        = null; //
-    public DcMotor  hangMotor        = null;
+    //public DcMotor  hangMotor        = null;
     public CRServo  intake           = null; //the active intake servo
     public Servo    wrist            = null; //the wrist servo
 
@@ -97,13 +97,14 @@ public class mecanumAndServo extends LinearOpMode {
         rightBackDrive  = hardwareMap.dcMotor.get("BR");
         liftMotor       = hardwareMap.dcMotor.get("liftMotor");
         armMotor        = hardwareMap.get(DcMotor.class, "left_arm"); //the arm motor
-        hangMotor       = hardwareMap.dcMotor.get("hangMotor");
+        //hangMotor       = hardwareMap.dcMotor.get("hangMotor");
 
 
        /*
        we need to reverse the left side of the drivetrain so it doesn't turn when we ask all the
        drive motors to go forward.
         */
+
 
         leftFrontDrive.setDirection(DcMotor.Direction.REVERSE);
         leftBackDrive.setDirection(DcMotor.Direction.REVERSE);
@@ -116,7 +117,7 @@ public class mecanumAndServo extends LinearOpMode {
         leftBackDrive.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         rightBackDrive.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         armMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        hangMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        //hangMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         /*This sets the maximum current that the control hub will apply to the arm before throwing a flag */
         ((DcMotorEx) armMotor).setCurrentAlert(5,CurrentUnit.AMPS);
@@ -146,7 +147,7 @@ public class mecanumAndServo extends LinearOpMode {
         telemetry.addLine("Robot Ready.");
         telemetry.update();
         // Retrieve the IMU from the hardware map
-        IMU imu = hardwareMap.get(IMU.class, "imu");
+        IMU imu = hardwareMap.get(IMU.class, "IMU");
         // Adjust the orientation parameters to match your robot
         IMU.Parameters parameters = new IMU.Parameters(new RevHubOrientationOnRobot(
                 RevHubOrientationOnRobot.LogoFacingDirection.UP,
@@ -292,7 +293,7 @@ public class mecanumAndServo extends LinearOpMode {
             }
 
 
-            hangMotor.setPower(-gamepad2.left_stick_y);
+            //hangMotor.setPower(-gamepad2.left_stick_y);
 
             looptime = getRuntime();
             cycletime = looptime-oldtime;
