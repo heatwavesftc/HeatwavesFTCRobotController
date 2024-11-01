@@ -95,8 +95,8 @@ public class mecanumAndServo extends LinearOpMode {
         leftBackDrive   = hardwareMap.dcMotor.get("BL");
         rightFrontDrive = hardwareMap.dcMotor.get("FR");
         rightBackDrive  = hardwareMap.dcMotor.get("BR");
-        liftMotor       = hardwareMap.dcMotor.get("liftMotor");
-        armMotor        = hardwareMap.get(DcMotor.class, "left_arm"); //the arm motor
+        liftMotor       = hardwareMap.dcMotor.get("slides");
+        armMotor        = hardwareMap.get(DcMotor.class, "arm"); //the arm motor
         //hangMotor       = hardwareMap.dcMotor.get("hangMotor");
 
 
