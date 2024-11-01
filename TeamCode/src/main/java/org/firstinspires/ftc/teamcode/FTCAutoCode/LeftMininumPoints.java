@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
 
 @Autonomous()
-public class LeftMiniumPoints extends LinearOpMode {
+public class LeftMininumPoints extends LinearOpMode {
 
     //Motors
     private DcMotor motorRightFront = null;

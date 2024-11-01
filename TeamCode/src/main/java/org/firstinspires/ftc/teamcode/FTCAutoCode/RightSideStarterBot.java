@@ -2,17 +2,23 @@ package org.firstinspires.ftc.teamcode.FTCAutoCode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import com.qualcomm.robotcore.hardware.Servo;
 
 @Autonomous
-public class leftSide extends LinearOpMode {
+public class RightSideStarterBot extends LinearOpMode {
 
         //Motors
         private DcMotor motorRightFront = null;
         private DcMotor motorRightBack = null;
         private DcMotor motorLeftFront = null;
         private DcMotor motorLeftBack = null;
+        private DcMotor liftMotor = null;
+        private Servo wrist = null;
+        private CRServo intake = null;
+        private DcMotor armMotor = null;
 
         @Override
         public void runOpMode() throws InterruptedException {
@@ -33,51 +39,53 @@ public class leftSide extends LinearOpMode {
             motorLeftFront.setPower(0.6);
             motorRightBack.setPower(-0.6);
             motorLeftBack.setPower(0.6);
-            sleep(625);
-        //move forward
+            sleep(200);
+            //move forward
 
-            motorRightBack.setPower(-0.6);
             motorRightFront.setPower(0.6);
-            motorLeftBack.setPower(-0.6);
-            motorLeftFront.setPower(0.6);
-            sleep(400);
-        //strafe right
-
-            motorRightBack.setPower(-0.6);
-            motorRightFront.setPower(0.6);
-            motorRightFront.setPower(0.6);
-            motorLeftBack.setPower(-0.6);
-            motorLeftFront.setPower(0.6);
-            sleep(1600);
-        //strafe right
-
-            motorRightBack.setPower(-0.3);
-            motorRightFront.setPower(-0.3);
-            motorLeftBack.setPower(0.3);
-            motorLeftFront.setPower(0.3);
-            sleep (50);
-        //move forward
-
-            motorRightBack.setPower(-0.6);
-            motorRightFront.setPower(-0.6);
-            motorLeftBack.setPower(-0.6);
             motorLeftFront.setPower(-0.6);
-            sleep(650);
-        //turn left
-
-            motorRightBack.setPower(0.6);
-            motorRightFront.setPower(-0.6);
+            motorRightBack.setPower(-0.6);
             motorLeftBack.setPower(0.6);
-            motorLeftFront.setPower(-0.6);
-            sleep(75);
+            sleep(200);
             //strafe left
 
-            motorRightBack.setPower(-0.6);
-            motorRightFront.setPower(-0.6);
-            motorLeftBack.setPower(0.6);
-            motorLeftFront.setPower(0.6);
-            sleep (2850);
-            //move forward
+            liftMotor.setPower(0.5);
+            sleep(1000);
+
+            armMotor.setPower(1);
+            sleep(2000);
+
+            wrist.setPosition(0);
+            wrist.setPosition(0.7);
+            wrist.setPosition(0.5);
+            //hangs the specimen at the beginning of auto
+
+            motorRightFront.setPower(0.6);
+            motorLeftFront.setPower(-0.6);
+            motorRightBack.setPower(0.6);
+            motorLeftBack.setPower(-0.6);
+            sleep(300);
+            //strafe right
+
+            armMotor.setPower(-0.4);
+            sleep(1000);
+
+            intake.setPower(0.5);
+            sleep(600);
+            //intakes the samples
+
+            armMotor.setPower(1);
+            sleep(1000);
+
+            liftMotor.setPower(-0.5);
+            sleep(650);
+            //lifts up the arm
+
+
+
+
+
+
         }
     }
 

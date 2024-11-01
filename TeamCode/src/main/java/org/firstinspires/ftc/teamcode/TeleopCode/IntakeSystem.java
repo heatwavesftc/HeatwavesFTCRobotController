@@ -18,7 +18,8 @@ public class IntakeSystem extends OpMode {
 
     @Override
     public void loop() {
-        intake.setPower(gamepad1.left_trigger);
+        intake.setPower(gamepad2.a);
+
 
     }
 
