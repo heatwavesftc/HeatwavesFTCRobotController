@@ -49,10 +49,10 @@ public class RightSideStarterBot extends LinearOpMode {
             sleep(200);
             //strafe left
 
-            liftMotor.setPower(0.3);
+            liftMotor.setPower(0.5);
             sleep(1000);
 
-            armMotor.setPower(0.3);
+            armMotor.setPower(1);
             sleep(1000);
 
             wrist.setPosition(0);
@@ -67,11 +67,15 @@ public class RightSideStarterBot extends LinearOpMode {
             sleep(300);
             //strafe right
 
-            armMotor.setPower(-0.3);
+            armMotor.setPower(-0.4);
             sleep(1000);
 
             intake.setPower(0.5);
             sleep(600);
+            //intakes the samples
+
+
+
 
 
 
