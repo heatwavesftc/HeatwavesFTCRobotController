@@ -80,7 +80,7 @@ public class RightSideStarterBot extends LinearOpMode {
 
             liftMotor.setPower(-0.5);
             sleep(650);
-            //lifts up the arm
+            //lifts up the arm and withdraws it
 
             motorRightFront.setPower(0.6);
             motorLeftFront.setPower(-0.6);
@@ -102,6 +102,7 @@ public class RightSideStarterBot extends LinearOpMode {
             motorLeftBack.setPower(-0.6);
             sleep(800);
             //rotate right
+
 
 
 
