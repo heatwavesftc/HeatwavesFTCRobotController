@@ -27,8 +27,9 @@ public class RightSideStarterBot extends LinearOpMode {
             motorRightBack = hardwareMap.get(DcMotor.class, "BR");
             motorLeftBack = hardwareMap.get(DcMotor.class, "BL");
             motorLeftFront = hardwareMap.get(DcMotor.class, "FL");
-
-
+            wrist = hardwareMap.get(Servo.class, "wrist");
+            intake = hardwareMap.get(CRServo.class, "intake");
+            armMotor = hardwareMap.get(DcMotor.class, "arm");
 
             motorRightBack.setDirection(DcMotorSimple.Direction.FORWARD);
             motorRightFront.setDirection(DcMotorSimple.Direction.FORWARD);
@@ -80,6 +81,28 @@ public class RightSideStarterBot extends LinearOpMode {
             liftMotor.setPower(-0.5);
             sleep(650);
             //lifts up the arm
+
+            motorRightFront.setPower(0.6);
+            motorLeftFront.setPower(-0.6);
+            motorRightBack.setPower(0.6);
+            motorLeftBack.setPower(-0.6);
+            sleep(250);
+            //move backwards
+
+            motorRightFront.setPower(0.6);
+            motorLeftFront.setPower(-0.6);
+            motorRightBack.setPower(-0.6);
+            motorLeftBack.setPower(0.6);
+            sleep(1000);
+            //strafe left
+
+            motorRightFront.setPower(-0.6);
+            motorLeftFront.setPower(-0.6);
+            motorRightBack.setPower(-0.6);
+            motorLeftBack.setPower(-0.6);
+            sleep(800);
+            //rotate right
+
 
 
 
