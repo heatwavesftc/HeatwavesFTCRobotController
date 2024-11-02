@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 
 @TeleOp
-public class fullRobot extends OpMode {
+public class fullRobotCopy extends OpMode {
 
     private DcMotor slides = null;
     private CRServo intake = null;
@@ -44,39 +44,41 @@ public class fullRobot extends OpMode {
     wrist = hardwareMap.get(Servo.class, "wrist");
     arm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
+    arm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+    arm.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+
 
     }
 
+    @Override
+    public void init_loop() {
+
+    }
 
     @Override
     public void loop() {
         moveDriveTrain();
         slides.setPower(-gamepad1.left_trigger);
         slides.setPower(gamepad1.right_trigger);
-
         if (gamepad2.x) {
-            arm.setTargetPosition(300);
+            arm.setTargetPosition(700);
             arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-
-            if (arm.getCurrentPosition() != arm.getTargetPosition()) {
-                arm.setPower(0.5);
+            if (arm.getCurrentPosition() < arm.getTargetPosition()) {
+                arm.setPower(0.3);
             } else {
                 arm.setPower(0);
             }
         }
-
         if (gamepad2.y) {
-            arm.setTargetPosition(0);
+            arm.setTargetPosition(100);
             arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-            if (arm.getCurrentPosition() != arm.getTargetPosition()) {
-                arm.setPower(0.5);
+            if (arm.getCurrentPosition() > arm.getTargetPosition()) {
+                arm.setPower(0.15);
             } else {
                 arm.setPower(0);
             }
         }
-
-        telemetry.addData("Encoder Ticks", arm.getCurrentPosition());
 
         if(gamepad2.a){
             intake.setPower(1.0);
@@ -88,8 +90,10 @@ public class fullRobot extends OpMode {
             intake.setPower(0.0);
 
         }
-
+        telemetry.addData("Arm Position: ", arm.getCurrentPosition());
+        telemetry.addData("Arm Target Pos: ", arm.getTargetPosition());
         wrist.setPosition(0.5);
         telemetry.update();
     }
+
 }
