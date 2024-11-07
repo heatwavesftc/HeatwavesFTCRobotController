@@ -5,10 +5,11 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 public class TemplateAuto extends LinearOpMode {
     //Motors
-    private DcMotor motorRightFront = null;
-    private DcMotor motorRightBack = null;
-    private DcMotor motorLeftFront = null;
-    private DcMotor motorLeftBack = null;
+    protected DcMotor motorRightFront = null;
+    protected DcMotor motorRightBack = null;
+    protected DcMotor motorLeftFront = null;
+    protected DcMotor motorLeftBack = null;
+
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -32,17 +33,33 @@ public class TemplateAuto extends LinearOpMode {
         motorLeftFront.setPower(speed);
     }
 
-    public void forward(double speed){
+    public void moveFront(double speed){
         motorRightBack.setPower(-speed);
         motorRightFront.setPower(-speed);
         motorLeftFront.setPower(speed);
         motorLeftBack.setPower(speed);
     }
 
-    public void back(double speed){
+    public void moveBack(double speed){
         motorLeftBack.setPower(-speed);
         motorLeftFront.setPower(-speed);
         motorRightFront.setPower(speed);
         motorRightBack.setPower(speed);
+
     }
+
+    public void rotateRight(double speed){
+        motorRightBack.setPower(speed);
+        motorRightFront.setPower(speed);
+        motorLeftFront.setPower(speed);
+        motorLeftBack.setPower(speed);
+    }
+
+    public void rotateLeft(double speed){
+        motorRightBack.setPower(-speed);
+        motorRightFront.setPower(-speed);
+        motorLeftFront.setPower(-speed);
+        motorLeftBack.setPower(-speed);
+    }
+
 }

@@ -34,7 +34,7 @@ public class parkingLeft extends LinearOpMode {
         motorRightBack.setPower(0.6);
         motorLeftBack.setPower(0.6);
         sleep(1000);
-        //go forwards and park
+        //go backwards and park
 
     }
 }
