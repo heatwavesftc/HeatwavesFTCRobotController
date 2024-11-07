@@ -22,11 +22,24 @@ public class autoLeftFirstMeet extends TemplateAuto {
         intake = hardwareMap.get(CRServo.class, "intake");
         armMotor = hardwareMap.get(DcMotor.class, "arm");
 
+        armMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        armMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         motorRightBack.setDirection(DcMotorSimple.Direction.FORWARD);
         motorRightFront.setDirection(DcMotorSimple.Direction.FORWARD);
 
         waitForStart();
 
+        moveFront(0.6);
+        sleep(400);
+
+        strafeLeft(0.6);
+        sleep(400);
+
+        rotateLeft(0.6);
+        sleep(800);
+
+        armMotor.setTargetPosition(900);
+        armMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
 
 
