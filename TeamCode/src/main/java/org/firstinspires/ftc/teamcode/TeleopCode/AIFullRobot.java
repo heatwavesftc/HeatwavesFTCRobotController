@@ -60,7 +60,7 @@ public class AIFullRobot extends OpMode {
         if (gamepad2.x) {
             arm.setTargetPosition(700);
             arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            if (arm.getCurrentPosition() < arm.getTargetPosition()) {
+            if (arm.getCurrentPosition() < arm.getTargetPosition() && arm.getCurrentPosition() <= 700) {
                 arm.setPower(0.5);
             } else {
                 arm.setPower(0);
@@ -68,32 +68,17 @@ public class AIFullRobot extends OpMode {
         } else if (gamepad2.y) {
             arm.setTargetPosition(100);
             arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            if (arm.getCurrentPosition() > arm.getTargetPosition()) {
+            if (arm.getCurrentPosition() > arm.getTargetPosition() && arm.getCurrentPosition() >= 100) {
                 arm.setPower(0.2);
             } else {
                 arm.setPower(0);
             }
         } else {
-            // If no bumper is pressed, keep the arm in its current position
-            arm.setTargetPosition(position);
+            // If no bumper is pressed, keep the arm in its current position within range
+            arm.setTargetPosition(Math.max(100, Math.min(position, 700)));
             arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             arm.setPower(0.3); // A small power to keep the arm in place
         }
-
-        /*if (gamepad2.left_bumper) {
-            arm.setTargetPosition(900);
-            arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            arm.setPower(0.5);
-        } else {
-            arm.setPower(0);
-        }
-        if (gamepad2.right_bumper) {
-            arm.setTargetPosition(100);
-            arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            arm.setPower(0.2);
-        } else {
-            arm.setPower(0);
-        }*/
 
         if (gamepad2.a) {
             intake.setPower(1.0);
