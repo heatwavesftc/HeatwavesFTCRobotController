@@ -34,7 +34,7 @@ public class fullRobotCopy extends OpMode {
 
     @Override
     public void init() {
-    slides = hardwareMap.get(DcMotor.class,"slides");
+    slides = hardwareMap.get(DcMotor.class,"Slide");
     arm = hardwareMap.get(DcMotor.class,"arm");
     intake = hardwareMap.get(CRServo.class,"intake");
     motorRightFront = hardwareMap.get(DcMotor.class, "FR");
@@ -58,10 +58,11 @@ public class fullRobotCopy extends OpMode {
     @Override
     public void loop() {
         moveDriveTrain();
-        slides.setPower(-gamepad1.left_trigger);
-        slides.setPower(gamepad1.right_trigger);
+        int position = arm.getCurrentPosition();
+        slides.setPower(-gamepad2.left_stick_x);
+        slides.setPower(gamepad2.left_stick_y);
         if (gamepad2.x) {
-            arm.setTargetPosition(700);
+            arm.setTargetPosition(900);
             arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             if (arm.getCurrentPosition() < arm.getTargetPosition()) {
                 arm.setPower(0.3);
@@ -90,6 +91,25 @@ public class fullRobotCopy extends OpMode {
             intake.setPower(0.0);
 
         }
+        if (gamepad2.left_bumper) {
+            arm.setPower(1);
+        }
+       else {
+           arm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+           arm.setTargetPosition(position);
+        }
+       if (gamepad2.right_bumper){
+           arm.setPower(-1);
+       }
+       else {
+           arm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+           arm.setTargetPosition(position);
+       }
+       if (arm.getCurrentPosition() >= 900){
+           arm.setTargetPosition(900);
+           arm.setPower(0);
+       }
+
         telemetry.addData("Arm Position: ", arm.getCurrentPosition());
         telemetry.addData("Arm Target Pos: ", arm.getTargetPosition());
         wrist.setPosition(0.5);
