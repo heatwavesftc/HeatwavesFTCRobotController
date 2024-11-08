@@ -58,7 +58,7 @@ public class AIFullRobot extends OpMode {
         slides.setPower(gamepad2.left_stick_y);
 
         if (gamepad2.x) {
-            arm.setTargetPosition(900);
+            arm.setTargetPosition(700);
             arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             if (arm.getCurrentPosition() < arm.getTargetPosition()) {
                 arm.setPower(0.5);
@@ -80,7 +80,7 @@ public class AIFullRobot extends OpMode {
             arm.setPower(0.3); // A small power to keep the arm in place
         }
 
-        if (gamepad2.left_bumper) {
+        /*if (gamepad2.left_bumper) {
             arm.setTargetPosition(900);
             arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             arm.setPower(0.5);
@@ -93,7 +93,7 @@ public class AIFullRobot extends OpMode {
             arm.setPower(0.2);
         } else {
             arm.setPower(0);
-        }
+        }*/
 
         if (gamepad2.a) {
             intake.setPower(1.0);
