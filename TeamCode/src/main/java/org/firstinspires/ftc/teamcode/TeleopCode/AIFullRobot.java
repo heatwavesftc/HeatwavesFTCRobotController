@@ -57,25 +57,27 @@ public class AIFullRobot extends OpMode {
         slides.setPower(-gamepad2.left_stick_x);
         slides.setPower(gamepad2.left_stick_y);
 
+        int ARM_TARGET_POSITION = 750;
+        int ARM_LOWER_POSITION = 100;
         if (gamepad2.x) {
-            arm.setTargetPosition(700);
+            arm.setTargetPosition(ARM_TARGET_POSITION);
             arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            if (arm.getCurrentPosition() < arm.getTargetPosition() && arm.getCurrentPosition() <= 700) {
+            if (arm.getCurrentPosition() < arm.getTargetPosition() && arm.getCurrentPosition() <= ARM_TARGET_POSITION) {
                 arm.setPower(0.5);
             } else {
                 arm.setPower(0);
             }
         } else if (gamepad2.y) {
-            arm.setTargetPosition(100);
+            arm.setTargetPosition(ARM_LOWER_POSITION);
             arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            if (arm.getCurrentPosition() > arm.getTargetPosition() && arm.getCurrentPosition() >= 100) {
+            if (arm.getCurrentPosition() > arm.getTargetPosition() && arm.getCurrentPosition() >= ARM_LOWER_POSITION) {
                 arm.setPower(0.2);
             } else {
                 arm.setPower(0);
             }
         } else {
-            // If no bumper is pressed, keep the arm in its current position within range
-            arm.setTargetPosition(Math.max(100, Math.min(position, 700)));
+            // If no button is pressed, keep the arm in its current position within range
+            arm.setTargetPosition(Math.max(ARM_LOWER_POSITION, Math.min(position, ARM_TARGET_POSITION)));
             arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             arm.setPower(0.3); // A small power to keep the arm in place
         }
@@ -86,11 +88,6 @@ public class AIFullRobot extends OpMode {
             intake.setPower(-1.0);
         } else {
             intake.setPower(0.0);
-        }
-
-        if (arm.getCurrentPosition() >= 900) {
-            arm.setTargetPosition(900);
-            arm.setPower(0);
         }
 
         telemetry.addData("Arm Position: ", arm.getCurrentPosition());
