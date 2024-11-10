@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
 
 @Autonomous
-public class parkingLeft extends LinearOpMode {
+public class wrist extends LinearOpMode {
 
     //Motors
     private DcMotor motorRightFront = null;
@@ -32,12 +32,12 @@ public class parkingLeft extends LinearOpMode {
         motorRightFront.setDirection(DcMotorSimple.Direction.FORWARD);
 
         waitForStart();
-        wrist.setPosition(0);
-        motorRightFront.setPower(0.6);
+        wrist.setPosition(-1);
+        /*motorRightFront.setPower(0.6);
         motorLeftFront.setPower(0.6);
         motorRightBack.setPower(0.6);
-        motorLeftBack.setPower(0.6);
-        sleep(1000);
+        motorLeftBack.setPower(0.6);*/
+        sleep(6000);
         //go backwards and park
 
     }

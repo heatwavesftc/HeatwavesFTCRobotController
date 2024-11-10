@@ -47,54 +47,57 @@ public class AIFullRobot extends OpMode {
         arm.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
 
+
     }
 
     @Override
     public void loop() {
-        moveDriveTrain();
-        int position = arm.getCurrentPosition();
-
-        slides.setPower(-gamepad2.left_stick_x);
-        slides.setPower(gamepad2.left_stick_y);
-
-        int ARM_TARGET_POSITION = 750;
-        int ARM_LOWER_POSITION = 100;
-        if (gamepad2.x) {
-            arm.setTargetPosition(ARM_TARGET_POSITION);
-            arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            if (arm.getCurrentPosition() < arm.getTargetPosition() && arm.getCurrentPosition() <= ARM_TARGET_POSITION) {
-                arm.setPower(0.5);
-            } else {
-                arm.setPower(0);
-            }
-        } else if (gamepad2.y) {
-            arm.setTargetPosition(ARM_LOWER_POSITION);
-            arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            if (arm.getCurrentPosition() > arm.getTargetPosition() && arm.getCurrentPosition() >= ARM_LOWER_POSITION) {
-                arm.setPower(0.2);
-            } else {
-                arm.setPower(0);
-            }
-        } else {
-            // If no button is pressed, keep the arm in its current position within range
-            arm.setTargetPosition(Math.max(ARM_LOWER_POSITION, Math.min(position, ARM_TARGET_POSITION)));
-            arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            arm.setPower(0.3); // A small power to keep the arm in place
+        if (gamepad1.a) {
+            wrist.setPosition(0.05);
         }
+            moveDriveTrain();
+            int position = arm.getCurrentPosition();
 
-        if (gamepad2.a) {
-            intake.setPower(1.0);
-        } else if (gamepad2.b) {
-            intake.setPower(-1.0);
-        } else {
-            intake.setPower(0.0);
+            slides.setPower(-gamepad2.left_stick_x);
+            slides.setPower(gamepad2.left_stick_y);
+
+            int ARM_TARGET_POSITION = 750;
+            int ARM_LOWER_POSITION = 100;
+            if (gamepad2.x) {
+                arm.setTargetPosition(ARM_TARGET_POSITION);
+                arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                if (arm.getCurrentPosition() < arm.getTargetPosition() && arm.getCurrentPosition() <= ARM_TARGET_POSITION) {
+                    arm.setPower(0.5);
+                } else {
+                    arm.setPower(0);
+                }
+            } else if (gamepad2.y) {
+                arm.setTargetPosition(ARM_LOWER_POSITION);
+                arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                if (arm.getCurrentPosition() > arm.getTargetPosition() && arm.getCurrentPosition() >= ARM_LOWER_POSITION) {
+                    arm.setPower(0.2);
+                } else {
+                    arm.setPower(0);
+                }
+            } else {
+                // If no button is pressed, keep the arm in its current position within range
+                arm.setTargetPosition(Math.max(ARM_LOWER_POSITION, Math.min(position, ARM_TARGET_POSITION)));
+                arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                arm.setPower(0.3); // A small power to keep the arm in place
+            }
+
+            if (gamepad2.a) {
+                intake.setPower(1.0);
+            } else if (gamepad2.b) {
+                intake.setPower(-1.0);
+            } else {
+                intake.setPower(0.0);
+            }
+
+            telemetry.addData("Arm Position: ", arm.getCurrentPosition());
+            telemetry.addData("Arm Target Pos: ", arm.getTargetPosition());
+            wrist.setPosition(0.5);
+            telemetry.update();
         }
-
-        telemetry.addData("Arm Position: ", arm.getCurrentPosition());
-        telemetry.addData("Arm Target Pos: ", arm.getTargetPosition());
-        wrist.setPosition(0.5);
-        telemetry.update();
     }
-}
-
 
