@@ -1,7 +1,9 @@
 package org.firstinspires.ftc.teamcode.FTCAutoCode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.Servo;
 
 public class TemplateAuto extends LinearOpMode {
     //Motors
@@ -9,6 +11,12 @@ public class TemplateAuto extends LinearOpMode {
     protected DcMotor motorRightBack = null;
     protected DcMotor motorLeftFront = null;
     protected DcMotor motorLeftBack = null;
+    protected DcMotor arm;
+    protected DcMotor slides = null;
+    //servo
+    protected Servo wrist;
+    protected CRServo intake;
+
 
 
     @Override
@@ -17,6 +25,11 @@ public class TemplateAuto extends LinearOpMode {
         motorRightBack = hardwareMap.get(DcMotor.class, "BR");
         motorLeftBack = hardwareMap.get(DcMotor.class, "BL");
         motorLeftFront = hardwareMap.get(DcMotor.class, "FL");
+        arm = hardwareMap.get(DcMotor.class, "arm");
+        slides = hardwareMap.get(DcMotor.class, "Slide");
+        wrist = hardwareMap.get(Servo.class, "wrist");
+        intake = hardwareMap.get(CRServo.class, "intake");
+        arm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
     }
 
     public void strafeLeft(double speed){
