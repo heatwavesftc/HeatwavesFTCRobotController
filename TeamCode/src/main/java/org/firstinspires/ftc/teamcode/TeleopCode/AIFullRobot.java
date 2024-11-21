@@ -21,14 +21,14 @@ public class AIFullRobot extends OpMode {
         double vertical;
         double horizontal;
         double pivot;
-        vertical = -gamepad1.left_stick_y;
-        horizontal = gamepad1.left_stick_x;
-        pivot = gamepad1.right_stick_x;
+        vertical =  0.8 * gamepad1.left_stick_y;
+        horizontal = 0.8 * -gamepad1.left_stick_x;
+        pivot = 0.8 * -gamepad1.right_stick_x;
 
-        motorRightFront.setPower(pivot + (vertical + horizontal));
-        motorRightBack.setPower(pivot + (vertical - horizontal));
-        motorLeftBack.setPower(pivot + (-vertical - horizontal));
-        motorLeftFront.setPower(pivot + (-vertical + horizontal));
+        motorRightFront.setPower(-pivot + (vertical - horizontal));
+        motorRightBack.setPower(-pivot + (vertical + horizontal));
+        motorLeftBack.setPower(-pivot + (-vertical + horizontal));
+        motorLeftFront.setPower(-pivot + (-vertical - horizontal));
     }
 
     @Override
@@ -52,14 +52,13 @@ public class AIFullRobot extends OpMode {
 
     @Override
     public void loop() {
-        if (gamepad1.a) {
-            wrist.setPosition(0.05);
-        }
+            wrist.setPosition(0.555);
+
             moveDriveTrain();
             int position = arm.getCurrentPosition();
 
-            slides.setPower(-gamepad2.left_stick_x);
-            slides.setPower(gamepad2.left_stick_y);
+            slides.setPower(gamepad2.left_stick_x);
+            slides.setPower(-gamepad2.left_stick_y);
 
             int ARM_TARGET_POSITION = 750;
             int ARM_LOWER_POSITION = 100;
@@ -96,7 +95,6 @@ public class AIFullRobot extends OpMode {
 
             telemetry.addData("Arm Position: ", arm.getCurrentPosition());
             telemetry.addData("Arm Target Pos: ", arm.getTargetPosition());
-            wrist.setPosition(0.5);
             telemetry.update();
         }
     }
