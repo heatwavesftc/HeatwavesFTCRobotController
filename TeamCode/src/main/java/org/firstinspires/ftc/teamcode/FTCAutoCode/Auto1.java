@@ -36,7 +36,7 @@ public class Auto1 extends TemplateAuto {
         strafeRight(0.6);
         sleep(250);
         //forward
-        moveFront(-0.6);
+        moveFront(-0.6);9
         sleep(800);
         //rotate
         rotateLeft(0.3);
@@ -45,6 +45,7 @@ public class Auto1 extends TemplateAuto {
         moveBack(-0.3);
         sleep(85);
         //arm*/
+        arm.setTargetPosition(0);
         arm.setTargetPosition(750);
         arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         arm.setPower(0.5);

@@ -36,23 +36,186 @@ public class fivePointAuto extends TemplateAuto{
          sleep(2000);
 
          moveBack(0.5);
-         sleep(300);
+         sleep(200);
 
          sleep(200);
          intake.setPower(0);
+
+         moveFront(0);
+         sleep(1000);
+         //stops the robot for a bit to reduce drifting
+
          strafeRight(0.5);
          sleep(2500);
 
          rotateLeft(0.5);
-         sleep(1050);
+         sleep(1400);
 
-         arm.setTargetPosition(800);
-         arm.setPower(0.5);
-         arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+         moveFront(0);
          sleep(1000);
+         //stops to reduce drift
 
          moveFront(0.5);
-         sleep(500);
+         sleep(250);
+
+         arm.setTargetPosition(310);
+         arm.setPower(1);
+         arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+         sleep(900);
+
+         moveFront(0.5);
+         sleep(250);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
          telemetry.update();
      }
