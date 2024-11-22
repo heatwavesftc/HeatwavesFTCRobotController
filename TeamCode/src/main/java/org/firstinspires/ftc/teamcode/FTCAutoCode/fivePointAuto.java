@@ -49,16 +49,16 @@ public class fivePointAuto extends TemplateAuto{
          sleep(2500);
 
          rotateLeft(0.5);
-         sleep(1400);
+         sleep(1300);
 
          moveFront(0);
          sleep(1000);
          //stops to reduce drift
 
-         arm.setTargetPosition(360);
+         arm.setTargetPosition(450);
          arm.setPower(1);
          arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-         sleep(925);
+         sleep(1600);
 
          moveFront(0.5);
          sleep(275);
