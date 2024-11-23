@@ -1,7 +1,9 @@
 package org.firstinspires.ftc.teamcode.FTCAutoCode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
+@Autonomous
 public class ElevenPointAuto extends TemplateAuto {
 
     public final static double WRIST_MIN_RANGE = 0.0;
@@ -21,12 +23,11 @@ public class ElevenPointAuto extends TemplateAuto {
         telemetry.addData("Wrist Position: ",wrist.getPosition());
         arm.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
-        moveFront(0.4);
-        sleep(350);
+        strafeLeft(0.2);
+        sleep(250);
 
-        strafeLeft(0.5);
-        sleep(350);
+        moveFront(0.7);
+        sleep(700);
 
-        rotateRight(0.5);
-        sleep(150);
+
 } }
