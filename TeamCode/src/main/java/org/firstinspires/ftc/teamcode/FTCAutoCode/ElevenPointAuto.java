@@ -21,4 +21,12 @@ public class ElevenPointAuto extends TemplateAuto {
         telemetry.addData("Wrist Position: ",wrist.getPosition());
         arm.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
+        moveFront(0.4);
+        sleep(350);
+
+        strafeLeft(0.5);
+        sleep(350);
+
+        rotateRight(0.5);
+        sleep(150);
 } }
