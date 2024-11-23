@@ -23,11 +23,49 @@ public class ElevenPointAuto extends TemplateAuto {
         telemetry.addData("Wrist Position: ",wrist.getPosition());
         arm.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
-        strafeLeft(0.2);
-        sleep(250);
+        strafeRight(0.4);
+        sleep(500);
 
-        moveFront(0.7);
-        sleep(700);
+        moveBack(0);
+        sleep(900);
+
+        moveFront(0.5);
+        sleep(580);
+
+        rotateLeft(0.3);
+        sleep(430);
+
+        moveBack(0.3);
+        sleep(400);
+
+        strafeRight(0.3);
+        sleep(830);
+
+        moveFront(0);
+
+        arm.setTargetPosition(350);
+        arm.setPower(0.5);
+        arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        sleep(3000);
+
+        slides.setPower(0.5);
+        sleep(1000);
+
+        moveFront(0.2);
+        sleep(400);
+
+
+        moveBack(0.3);
+        sleep(100);
+
+        moveFront(0.2);
+        sleep(190);
+
+        sleep(100);
+        moveFront(0);
+        intake.setPower(1);
+        sleep(1700);
+
 
 
 } }

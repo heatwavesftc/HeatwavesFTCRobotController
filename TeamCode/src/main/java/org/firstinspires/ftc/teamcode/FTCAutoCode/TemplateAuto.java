@@ -1,10 +1,14 @@
 package org.firstinspires.ftc.teamcode.FTCAutoCode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 
+@Autonomous
+@Disabled
 public class TemplateAuto extends LinearOpMode {
     //Motors
     protected DcMotor motorRightFront = null;
