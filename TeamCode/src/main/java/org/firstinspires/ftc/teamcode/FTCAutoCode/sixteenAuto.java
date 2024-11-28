@@ -32,7 +32,13 @@ public class sixteenAuto extends TemplateAuto {
          arm.setPower(0.5);
          arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-         slides.set
+         slides.setPower(0.5);
+         sleep(550);
+
+         intake.setPower(1);
+         sleep(1000);
+
+
 
 }
  }
