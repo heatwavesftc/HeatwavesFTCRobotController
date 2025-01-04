@@ -34,6 +34,7 @@ public class TemplateAuto extends LinearOpMode {
         wrist = hardwareMap.get(Servo.class, "wrist");
         intake = hardwareMap.get(CRServo.class, "intake");
         arm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        slides.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
     }
 
     public void strafeLeft(double speed){
