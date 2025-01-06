@@ -27,7 +27,7 @@ public class NewAuto extends TemplateAuto{
          sleep(200);
 
          moveFront(0.4);
-         sleep(800);
+         sleep(810);
 
 
          //richard is the goat and so is krish
@@ -45,13 +45,53 @@ public class NewAuto extends TemplateAuto{
          moveBack(0.2);
          sleep(390);
 
-         strafeRight(0.5);
-         sleep(2100);
+         strafeRight(0.3);
+         sleep(350);
 
-         rotateRight(0.3);
+         rotateRight(0.5);
+         sleep(750);
+
+         strafeLeft(0.4);
+         sleep(215);
+
+         moveFront(0.4);
+         sleep(1800);
+
+         strafeLeft(0.4);
+         sleep(415);
+
+         moveBack(0.4);
+         sleep(400);
+
+         rotateRight(0.4);
+         sleep(400);
+
+         moveBack(0.40);
+         sleep(1400);
+
+         rotateLeft(0.4);
+         sleep(400);
+
+         moveFront(.25);
          sleep(300);
 
+         rotateRight(0.4);
+         sleep(600);
 
+         moveFront(0.4);
+         sleep(800);
+
+         rotateLeft(0.4);
+         sleep(450);
+
+         strafeRight(0.7);
+         sleep(200);
+
+         moveFront(0.4);
+         sleep(1400);
+
+         strafeLeft(0.4);
+         sleep(400);
 
 
 

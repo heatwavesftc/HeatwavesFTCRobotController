@@ -39,14 +39,14 @@ public class TemplateAuto extends LinearOpMode {
 
     public void strafeLeft(double speed){
         motorLeftFront.setPower(-speed);
-        motorRightFront.setPower(-speed);
+        motorRightFront.setPower(1.1 * -speed);
         motorRightBack.setPower(speed);
         motorLeftBack.setPower(speed);
     }
 
     public void strafeRight(double speed){
         motorRightBack.setPower(-speed);
-        motorRightFront.setPower(speed);
+        motorRightFront.setPower(1.1 * speed);
         motorLeftBack.setPower(-speed);
         motorLeftFront.setPower(speed);
     }
@@ -68,14 +68,14 @@ public class TemplateAuto extends LinearOpMode {
 
     public void rotateRight(double speed){
         motorRightBack.setPower(speed);
-        motorRightFront.setPower(speed);
+        motorRightFront.setPower(1.1 * speed);
         motorLeftFront.setPower(speed);
         motorLeftBack.setPower(speed);
     }
 
     public void rotateLeft(double speed){
         motorRightBack.setPower(-speed);
-        motorRightFront.setPower(-speed);
+        motorRightFront.setPower(1.1 * -speed);
         motorLeftFront.setPower(-speed);
         motorLeftBack.setPower(-speed);
     }

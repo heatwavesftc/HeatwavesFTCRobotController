@@ -15,11 +15,6 @@ public class NewAuto2 extends TemplateAuto { public final static double WRIST_MI
         arm.setPower(0.3);
         arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-        wrist.setPosition(WRIST_MIN_RANGE);
-        wrist.setPosition(WRIST_MAX_RANGE);
-        sleep(1000);
-        telemetry.addData("Wrist Position: ",wrist.getPosition());
-        arm.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
         strafeRight(0.3);
         sleep(200);
