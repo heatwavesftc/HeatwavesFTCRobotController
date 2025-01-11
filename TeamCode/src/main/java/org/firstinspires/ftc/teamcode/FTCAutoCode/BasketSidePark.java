@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 @Autonomous
-public class BasketSide extends TemplateAuto{
+public class BasketSidePark extends TemplateAuto{
     public final static double WRIST_MIN_RANGE = 0.0;
     public final static double WRIST_MAX_RANGE = 0.555;
      public void runOpMode() throws InterruptedException{
@@ -42,6 +42,7 @@ public class BasketSide extends TemplateAuto{
 
          sleep(200);
          intake.setPower(0);
+         //that was the first sample
 
          moveBack(0.2);
          sleep(390);
@@ -69,6 +70,7 @@ public class BasketSide extends TemplateAuto{
 
          moveBack(0.4);
          sleep(1400);
+         //this is second sample
 
          rotateLeft(0.4);
          sleep(300);
@@ -93,17 +95,21 @@ public class BasketSide extends TemplateAuto{
 
          moveBack(0.4);
          sleep( 1700);
+         //this is the third sample
 
         strafeRight(0.4);
         sleep(400);
 
         moveFront(0.5);
-        sleep(1700);
+        sleep(980);
 
         strafeLeft(0.5);
-        sleep(420);
+        sleep(600);
 
-        moveBack(0.5);
+        moveBack(0.4);
+        sleep(1700);
+
+        strafeRight(0.7);
         sleep(900);
      }
 
