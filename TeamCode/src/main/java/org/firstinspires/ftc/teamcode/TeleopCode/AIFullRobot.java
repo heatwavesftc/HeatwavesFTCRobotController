@@ -21,9 +21,9 @@ public class AIFullRobot extends OpMode {
         double vertical;
         double horizontal;
         double pivot;
-        vertical =  0.7 * gamepad1.left_stick_y;
-        horizontal = 0.7 * -gamepad1.left_stick_x;
-        pivot = 0.7 * -gamepad1.right_stick_x;
+        vertical =  0.6 * gamepad1.left_stick_y;
+        horizontal = 0.6 * -gamepad1.left_stick_x;
+        pivot = 0.6 * -gamepad1.right_stick_x;
 
         motorRightFront.setPower(-pivot + (vertical - horizontal));
         motorRightBack.setPower(-pivot + (vertical + horizontal));
