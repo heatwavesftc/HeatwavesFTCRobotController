@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 
 @TeleOp
-public class AIFullRobot2 extends OpMode {
+public class demoRobot extends OpMode {
 
     private DcMotor slides = null;
     private CRServo intake = null;
@@ -21,9 +21,9 @@ public class AIFullRobot2 extends OpMode {
         double vertical;
         double horizontal;
         double pivot;
-        vertical =  0.8 * gamepad1.left_stick_y;
-        horizontal = 0.8 * -gamepad1.left_stick_x;
-        pivot = 0.8 * -gamepad1.right_stick_x;
+        vertical =  0.45 * gamepad1.left_stick_y;
+        horizontal = 0.45 * -gamepad1.left_stick_x;
+        pivot = 0.45 * -gamepad1.right_stick_x;
 
         motorRightFront.setPower(-pivot + (vertical - horizontal));
         motorRightBack.setPower(-pivot + (vertical + horizontal));
@@ -45,8 +45,8 @@ public class AIFullRobot2 extends OpMode {
 
         arm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         arm.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        slides.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        slides.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+
+
 
     }
 
@@ -60,7 +60,6 @@ public class AIFullRobot2 extends OpMode {
             slides.setPower(gamepad2.left_stick_x);
             slides.setPower(-gamepad2.left_stick_y);
 
-            int ARM_TARGET_POSITION_MAX = 1500;
             int ARM_TARGET_POSITION = 750;
             int ARM_LOWER_POSITION = 100;
             if (gamepad2.x) {
@@ -75,15 +74,7 @@ public class AIFullRobot2 extends OpMode {
                 arm.setTargetPosition(ARM_LOWER_POSITION);
                 arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
                 if (arm.getCurrentPosition() > arm.getTargetPosition() && arm.getCurrentPosition() >= ARM_LOWER_POSITION) {
-                    arm.setPower(1);
-                } else {
-                    arm.setPower(0);
-                }
-            } else if (gamepad1.a) {
-                arm.setTargetPosition(ARM_TARGET_POSITION_MAX);
-                arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-                if (arm.getCurrentPosition() < arm.getTargetPosition() && arm.getCurrentPosition() <= ARM_TARGET_POSITION_MAX) {
-                    arm.setPower(0.5);
+                    arm.setPower(0.2);
                 } else {
                     arm.setPower(0);
                 }

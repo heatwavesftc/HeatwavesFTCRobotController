@@ -1,13 +1,21 @@
 package org.firstinspires.ftc.teamcode.FTCAutoCode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
+@Disabled
+@Autonomous
 public class sixteenAuto extends TemplateAuto {
 
     public void runOpMode() throws InterruptedException{
         super.runOpMode();
         arm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        slides.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         waitForStart();
+
+        arm.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        slides.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
         arm.setTargetPosition(50);
         arm.setPower(0.3);
@@ -33,8 +41,9 @@ public class sixteenAuto extends TemplateAuto {
          arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
          
 
+         slides.setTargetPosition(750);
          slides.setPower(0.5);
-         sleep(550);
+         slides.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
          intake.setPower(1);
          sleep(1000);

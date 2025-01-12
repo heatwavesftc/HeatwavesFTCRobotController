@@ -101,10 +101,10 @@ public class BasketSide extends TemplateAuto{
         sleep(1700);
 
         strafeLeft(0.5);
-        sleep(420);
+        sleep(500);
 
-        moveBack(0.5);
-        sleep(900);
+        moveBack(0.3);
+        sleep(2700);
      }
 
 
