@@ -59,26 +59,69 @@ public class middle_basket extends TemplateAuto{
         rotateLeft(-0.3);
         sleep(700);
 
-        moveBack(0.3);
-        sleep(1500);
-
-       /* rotateRight(0.4);
+        moveBack(0.5);
         sleep(1000);
 
-        moveFront(0.5);
-        sleep(1000);*/
-
-        intake.setPower(-1);
-//        rotateLeft(0.3);
-//        sleep(700);
-//
-//        moveFront(0.1);
-//        sleep(200);
         strafeRight(0.3);
-        sleep(3910);
+        sleep(700);
 
-        moveFront(0.1);
-        sleep(900);
+        rotateRight(0.5);
+        sleep(650);
 
+        strafeLeft(0.4);
+        sleep(215);
+
+        moveFront(0.4);
+        sleep(2000);
+
+        strafeLeft(0.4);
+        sleep(415);
+
+        moveBack(0.4);
+        sleep(400);
+
+        rotateRight(0.4);
+        sleep(300);
+
+        moveBack(0.4);
+        sleep(1400);
+
+        rotateLeft(0.4);
+        sleep(300);
+
+        moveFront(.25);
+        sleep(300);
+
+        rotateRight(0.4);
+        sleep(500);
+
+        moveFront(0.4);
+        sleep(800);
+
+        rotateLeft(0.5);
+        sleep(300);
+
+        moveFront(0.5);
+        sleep(850);
+
+        strafeLeft(0.5);
+        sleep(570);
+
+        moveBack(0.4);
+        sleep( 1700);
+
+        strafeRight(0.4);
+        sleep(400);
+
+        moveFront(0.5);
+        sleep(1700);
+
+        strafeLeft(0.5);
+        sleep(500);
+
+        moveBack(0.3);
+        sleep(2700);
     }
+
 }
+
