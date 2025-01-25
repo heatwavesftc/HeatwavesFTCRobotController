@@ -1,4 +1,6 @@
 package org.firstinspires.ftc.teamcode.TeleopCode;
+import static java.lang.Thread.sleep;
+
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.CRServo;
@@ -46,7 +48,6 @@ public class AIFullRobot extends OpMode {
         motorLeftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         motorRightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
-
         slides.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
 
         arm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
@@ -69,6 +70,11 @@ public class AIFullRobot extends OpMode {
 
             int ARM_TARGET_POSITION = 750;
             int ARM_LOWER_POSITION = 100;
+
+
+            if (gamepad1.a){
+                init();
+            }
             if (gamepad2.x) {
                 arm.setTargetPosition(ARM_TARGET_POSITION);
                 arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
@@ -106,5 +112,6 @@ public class AIFullRobot extends OpMode {
             telemetry.addData("Arm Target Pos: ", arm.getTargetPosition());
             telemetry.update();
         }
-    }
+}
+
 
