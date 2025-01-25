@@ -15,7 +15,7 @@ public class specimenNetAuto extends TemplateAuto {
 
         waitForStart();
 
-        arm.setTargetPosition(700);
+        arm.setTargetPosition(750);
         arm.setPower(0.4);
         arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         wrist.setPosition(WRIST_MIN_RANGE);
@@ -36,8 +36,67 @@ public class specimenNetAuto extends TemplateAuto {
         sleep(1000);
         //first specimen
 
-        strafeLeft(0.5);
-        sleep(950);
+        arm.setTargetPosition(0);
+        arm.setPower(0.2);
+        arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        sleep(200);
 
+        strafeLeft(0.5);
+        sleep(1010);
+
+        moveFront(0.5);
+        sleep(1100);
+
+        rotateRight(0.4);
+        sleep(250);
+
+        moveBack(0.4);
+        sleep(2000);
+        //first sample in net zone
+
+        moveFront(0.4);
+        sleep(1900);
+
+        rotateLeft(0.4);
+        sleep(250);
+
+        strafeLeft(0.4);
+        sleep(900);
+
+        moveBack(0.5);
+        sleep(1600);
+        //second sample
+
+        moveFront(0.5);
+        sleep(1800);
+
+        strafeLeft(0.4);
+        sleep(600);
+
+        moveBack(0.5);
+        sleep(1600);
+        //last sample in net zone
+
+        strafeRight(0.4);
+        sleep(200);
+
+        moveFront(0.5);
+        sleep(1400);
+
+        strafeLeft(0);
+
+        rotateRight(0.5);
+        sleep(700);
+
+        rotateRight(0);
+
+        arm.setTargetPosition(620);
+        arm.setPower(0.4);
+        arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        sleep(1500);
+
+        moveFront(0.4);
+        sleep(1400);
+        //ascent
     }
 }
