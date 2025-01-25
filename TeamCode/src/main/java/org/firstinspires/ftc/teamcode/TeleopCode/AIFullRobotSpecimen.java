@@ -1,12 +1,14 @@
 package org.firstinspires.ftc.teamcode.TeleopCode;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 
+@Disabled
 @TeleOp
-public class AIFullRobot extends OpMode {
+public class AIFullRobotSpecimen extends OpMode {
 
     private DcMotor slides = null;
     private CRServo intake = null;
@@ -45,12 +47,12 @@ public class AIFullRobot extends OpMode {
         motorLeftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         motorLeftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         motorRightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        motorRightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
-
-        slides.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
 
         arm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         arm.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+
 
 
     }
@@ -64,8 +66,6 @@ public class AIFullRobot extends OpMode {
 
             slides.setPower(-gamepad2.left_stick_x);
             slides.setPower(gamepad2.left_stick_y);
-
-
 
             int ARM_TARGET_POSITION = 750;
             int ARM_LOWER_POSITION = 100;
@@ -96,12 +96,13 @@ public class AIFullRobot extends OpMode {
                 intake.setPower(1.0);
             } else if (gamepad2.b) {
                 intake.setPower(-1.0);
+            } else if (gamepad1.a) {
+                wrist.setPosition(0.2);
             } else {
+                wrist.setPosition(0.555);
                 intake.setPower(0.0);
             }
 
-            telemetry.addData("Slides Power: ", slides
-                    .getPower());
             telemetry.addData("Arm Position: ", arm.getCurrentPosition());
             telemetry.addData("Arm Target Pos: ", arm.getTargetPosition());
             telemetry.update();
