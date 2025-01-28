@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 @Autonomous
-public class BasketSide extends TemplateAuto{
+public class netZone extends TemplateAuto{
     public final static double WRIST_MIN_RANGE = 0.0;
     public final static double WRIST_MAX_RANGE = 0.555;
      public void runOpMode() throws InterruptedException{
