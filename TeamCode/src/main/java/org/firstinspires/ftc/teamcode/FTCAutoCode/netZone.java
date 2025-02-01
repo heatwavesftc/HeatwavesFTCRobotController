@@ -11,8 +11,12 @@ public class netZone extends TemplateAuto{
          super.runOpMode();
          arm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
          slides.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-         waitForStart();
 
+         motorLeftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE );
+         motorLeftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE );
+         motorRightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE );
+         motorRightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE );
+         waitForStart();
 
          arm.setTargetPosition(50);
          arm.setPower(0.2);
@@ -105,8 +109,27 @@ public class netZone extends TemplateAuto{
 
         moveBack(0.3);
         sleep(2700);
+
+         strafeRight(0.4);
+         sleep(200);
+
+         moveFront(0.5);
+         sleep(1100);
+
+         strafeLeft(0);
+
+         rotateRight(0.5);
+         sleep(700);
+
+         rotateRight(0);
+
+         arm.setTargetPosition(620);
+         arm.setPower(0.4);
+         arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+         sleep(1500);
+
+         moveFront(0.4);
+         sleep(1400);
+         //ascent
      }
-                            
-
-
 }

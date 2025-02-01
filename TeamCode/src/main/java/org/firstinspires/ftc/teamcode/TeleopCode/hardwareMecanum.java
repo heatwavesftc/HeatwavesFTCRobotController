@@ -39,17 +39,17 @@ public class hardwareMecanum {
         motorRightBack.setDirection(DcMotorSimple.Direction.FORWARD);
         motorRightFront.setDirection(DcMotorSimple.Direction.FORWARD);
 
-        // Set all motors to zero power
-        motorRightFront.setPower(0);
-        motorLeftFront.setPower(0);
-        motorRightBack.setPower(0);
-        motorLeftBack.setPower(0);
-
         // Set encoders
         motorRightFront.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         motorLeftFront.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         motorRightBack.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         motorLeftBack.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
+        // Set all motors to zero power
+        motorRightFront.setPower(0);
+        motorLeftFront.setPower(0);
+        motorRightBack.setPower(0);
+        motorLeftBack.setPower(0);
 
     }
     public void stopMotors() {

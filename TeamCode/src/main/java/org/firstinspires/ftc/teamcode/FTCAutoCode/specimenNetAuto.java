@@ -13,6 +13,10 @@ public class specimenNetAuto extends TemplateAuto {
         arm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         slides.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
+        motorLeftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE );
+        motorLeftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE );
+        motorRightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE );
+        motorRightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE );
         waitForStart();
 
         arm.setTargetPosition(750);
@@ -45,7 +49,7 @@ public class specimenNetAuto extends TemplateAuto {
         sleep(1010);
 
         moveFront(0.5);
-        sleep(1100);
+        sleep(1300);
 
         rotateRight(0.4);
         sleep(250);
@@ -64,24 +68,24 @@ public class specimenNetAuto extends TemplateAuto {
         sleep(900);
 
         moveBack(0.5);
-        sleep(1600);
+        sleep(1800);
         //second sample
 
         moveFront(0.5);
         sleep(1800);
 
         strafeLeft(0.4);
-        sleep(600);
+        sleep(900);
 
         moveBack(0.5);
-        sleep(1600);
+        sleep(1700);
         //last sample in net zone
 
         strafeRight(0.4);
         sleep(200);
 
         moveFront(0.5);
-        sleep(1400);
+        sleep(1500);
 
         strafeLeft(0);
 

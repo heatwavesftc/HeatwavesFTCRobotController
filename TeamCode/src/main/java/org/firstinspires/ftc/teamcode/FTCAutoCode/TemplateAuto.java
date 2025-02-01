@@ -35,10 +35,7 @@ public class TemplateAuto extends LinearOpMode {
         intake = hardwareMap.get(CRServo.class, "intake");
         arm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         slides.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        motorLeftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE );
-        motorLeftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE );
-        motorRightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE );
-        motorRightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE );
+
     }
 
     public void strafeLeft(double speed){

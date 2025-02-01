@@ -76,7 +76,8 @@ public class AIFullRobot extends OpMode {
             if (gamepad2.x) {
                 arm.setTargetPosition(ARM_TARGET_POSITION);
                 arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-                if (arm.getCurrentPosition() < arm.getTargetPosition() && arm.getCurrentPosition() <= ARM_TARGET_POSITION) {
+                if (arm.getCurrentPosition() < arm.getTargetPosition()
+                        && arm.getCurrentPosition() <= ARM_TARGET_POSITION) {
                     arm.setPower(0.5);
                 } else {
                     arm.setPower(0);
@@ -84,14 +85,16 @@ public class AIFullRobot extends OpMode {
             } else if (gamepad2.y) {
                 arm.setTargetPosition(ARM_LOWER_POSITION);
                 arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-                if (arm.getCurrentPosition() > arm.getTargetPosition() && arm.getCurrentPosition() >= ARM_LOWER_POSITION) {
+                if (arm.getCurrentPosition() > arm.getTargetPosition()
+                        && arm.getCurrentPosition() >= ARM_LOWER_POSITION) {
                     arm.setPower(0.2);
                 } else {
                     arm.setPower(0);
                 }
             } else {
                 // If no button is pressed, keep the arm in its current position within range
-                arm.setTargetPosition(Math.max(ARM_LOWER_POSITION, Math.min(position, ARM_TARGET_POSITION)));
+                arm.setTargetPosition(Math.max(ARM_LOWER_POSITION,
+                        Math.min(position, ARM_TARGET_POSITION)));
                 arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
                 arm.setPower(0.3); // A small power to keep the arm in place
             }
