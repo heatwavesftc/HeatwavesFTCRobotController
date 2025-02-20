@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 @Autonomous
-public class specimenNetAuto extends TemplateAuto {
+public class observatonSideNew extends TemplateAuto {
     public final static double WRIST_MIN_RANGE = 0.0;
     public final static double WRIST_MAX_RANGE = 0.555;
 
@@ -19,15 +19,21 @@ public class specimenNetAuto extends TemplateAuto {
         motorRightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE );
         waitForStart();
 
-        arm.setTargetPosition(750);
+        arm.setTargetPosition(800);
         arm.setPower(0.4);
         arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         wrist.setPosition(WRIST_MIN_RANGE);
         wrist.setPosition(WRIST_MAX_RANGE);
-        sleep(2500);
+        sleep(2900);
 
         moveFront(0.4);
-        sleep(1400);
+        sleep(1200);
+
+        strafeLeft(0.3);
+        sleep(500);
+
+        moveFront(0.4);
+        sleep(200);
 
         arm.setTargetPosition(400);
         arm.setPower(0.1);
@@ -45,27 +51,27 @@ public class specimenNetAuto extends TemplateAuto {
         arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         sleep(200);
 
-        strafeLeft(0.5);
-        sleep(1010);
+        strafeLeft(-0.5);
+        sleep(1600);
 
         moveFront(0.5);
         sleep(1300);
 
-        rotateRight(0.4);
-        sleep(250);
+        rotateRight(-0.4);
+        sleep(270);
 
         moveBack(0.4);
-        sleep(2000);
-        //first sample in net zone
+        sleep(2100);
+        //first sample in zone
 
         moveFront(0.4);
-        sleep(2000);
+        sleep(2100);
 
-        rotateLeft(0.4);
-        sleep(250);
+        rotateLeft(-0.4);
+        sleep(270);
 
-        strafeLeft(0.4);
-        sleep(1100);
+        strafeLeft(-0.4);
+        sleep(1300);
 
         moveBack(0.5);
         sleep(1800);
@@ -74,33 +80,14 @@ public class specimenNetAuto extends TemplateAuto {
         moveFront(0.5);
         sleep(1800);
 
-        strafeLeft(0.4);
-        sleep(900);
+        strafeLeft(-0.4);
+        sleep(800);
 
         moveBack(0.5);
-        sleep(1700);
-        //last sample in net zone
+        sleep(1800);
+        //last sample in zone
 
-        strafeRight(0.4);
-        sleep(200);
 
-        moveFront(0.5);
-        sleep(1600);
 
-        strafeLeft(0);
-
-        rotateRight(0.5);
-        sleep(700);
-
-        rotateRight(0);
-
-        arm.setTargetPosition(620);
-        arm.setPower(0.4);
-        arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        sleep(1500);
-
-        moveFront(0.4);
-        sleep(1400);
-        //ascent
     }
 }

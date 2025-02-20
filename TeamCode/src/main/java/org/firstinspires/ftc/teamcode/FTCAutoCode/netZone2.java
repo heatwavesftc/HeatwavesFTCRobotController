@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 @Autonomous
-public class netZone1 extends TemplateAuto {
+public class netZone2 extends TemplateAuto {
     public final static double WRIST_MIN_RANGE = 0.0;
     public final static double WRIST_MAX_RANGE = 0.555;
 
@@ -62,14 +62,14 @@ public class netZone1 extends TemplateAuto {
         sleep(1900);
 
         rotateRight(0.3);
-        sleep(400);
+        sleep(300);
 
         moveBack(0.5);
         sleep(1600);
         //second sample
 
         moveFront(0.5);
-        sleep(1750);
+        sleep(1650);
 
         rotateLeft(0.3);
         sleep(190);
@@ -82,7 +82,7 @@ public class netZone1 extends TemplateAuto {
         //third
 
         moveFront(0.5);
-        sleep(1700);
+        sleep(1600);
 
         strafeLeft(0.4);
         sleep(600);
@@ -95,12 +95,12 @@ public class netZone1 extends TemplateAuto {
         sleep(400);
 
         moveFront(0.5);
-        sleep(1620);
+        sleep(1520);
 
         strafeLeft(0);
 
         rotateRight(0.5);
-        sleep(800);
+        sleep(650);
 
         rotateRight(0);
 

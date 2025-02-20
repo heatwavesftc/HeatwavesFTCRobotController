@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 @Autonomous
-public class specimenNetAuto extends TemplateAuto {
+public class specimenNetAuto2 extends TemplateAuto {
     public final static double WRIST_MIN_RANGE = 0.0;
     public final static double WRIST_MAX_RANGE = 0.555;
 
@@ -37,7 +37,7 @@ public class specimenNetAuto extends TemplateAuto {
         sleep(1000);
 
         moveBack(0.2);
-        sleep(1000);
+        sleep(10005);
         //first specimen
 
         arm.setTargetPosition(0);
@@ -45,7 +45,7 @@ public class specimenNetAuto extends TemplateAuto {
         arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         sleep(200);
 
-        strafeLeft(0.5);
+        strafeLeft(-0.5);
         sleep(1010);
 
         moveFront(0.5);
@@ -65,7 +65,7 @@ public class specimenNetAuto extends TemplateAuto {
         sleep(250);
 
         strafeLeft(0.4);
-        sleep(1100);
+        sleep(850);
 
         moveBack(0.5);
         sleep(1800);
@@ -90,7 +90,7 @@ public class specimenNetAuto extends TemplateAuto {
         strafeLeft(0);
 
         rotateRight(0.5);
-        sleep(700);
+        sleep(600);
 
         rotateRight(0);
 

@@ -21,8 +21,6 @@ public class TemplateAuto extends LinearOpMode {
     protected Servo wrist;
     protected CRServo intake;
 
-
-
     @Override
     public void runOpMode() throws InterruptedException {
         motorRightFront = hardwareMap.get(DcMotor.class, "FR");
@@ -33,6 +31,7 @@ public class TemplateAuto extends LinearOpMode {
         slides = hardwareMap.get(DcMotor.class, "Slide");
         wrist = hardwareMap.get(Servo.class, "wrist");
         intake = hardwareMap.get(CRServo.class, "intake");
+
         arm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         slides.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 

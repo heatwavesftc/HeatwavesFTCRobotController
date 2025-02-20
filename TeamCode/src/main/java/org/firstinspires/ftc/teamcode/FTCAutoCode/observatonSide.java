@@ -52,40 +52,41 @@ public class observatonSide extends TemplateAuto {
         sleep(200);
 
         strafeLeft(-0.5);
-        sleep(1310);
+        sleep(1360);
 
         moveFront(0.5);
         sleep(1300);
 
         rotateRight(-0.4);
-        sleep(250);
+        sleep(270);
 
         moveBack(0.4);
-        sleep(2000);
-        //first sample in net zone
+        sleep(2100);
+        //first sample in zone
 
         moveFront(0.4);
-        sleep(2000);
+        sleep(2100);
 
         rotateLeft(-0.4);
-        sleep(250);
+        sleep(270);
 
         strafeLeft(-0.4);
-        sleep(1000);
+        sleep(1300);
 
         moveBack(0.5);
-        sleep(1550);
+        sleep(1800);
         //second sample
 
         moveFront(0.5);
-        sleep(1700);
+        sleep(1800);
 
         strafeLeft(-0.4);
-        sleep(900);
+        sleep(800);
 
         moveBack(0.5);
-        sleep(1700);
-        //last sample in net zone
+        sleep(1800);
+        //last sample in zone
+
 
 
     }
