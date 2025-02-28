@@ -53,36 +53,36 @@ public class StateBasketSide extends TemplateAuto {
         sleep(390);
 
         strafeRight(0.4);
-        sleep(200);
+        sleep(300);
 
         rotateRight(0.5);
-        sleep(875);
+        sleep(800);
 
         moveFront(0.4);
         sleep(1900);
 
         rotateRight(0.3);
-        sleep(400);
+        sleep(200);
 
         moveBack(0.4);
-        sleep(1870);
+        sleep(1800);
         //second sample
 
         moveFront(0.5);
-        sleep(1650);
+        sleep(1800);
 
         rotateLeft(0.3);
         sleep(190);
 
         strafeLeft(0.4);
-        sleep(1200);
+        sleep(600);
 
         moveBack(0.5);
-        sleep(1700);
+        sleep(1800);
         //third
 
         moveFront(0.5);
-        sleep(1600);
+        sleep(1800);
 
         strafeLeft(0.4);
         sleep(600);

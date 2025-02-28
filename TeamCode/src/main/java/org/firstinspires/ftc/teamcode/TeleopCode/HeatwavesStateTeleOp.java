@@ -105,6 +105,9 @@ public class HeatwavesStateTeleOp extends OpMode {
             } else if (gamepad2.b) {
                 intake.setPower(-1.0);
             } else if (gamepad1.a) {
+                clawslides.setTargetPosition(-100);
+                clawslides.setPower(0.8);
+                clawslides.setMode(DcMotor.RunMode.RUN_TO_POSITION);
                 init();
             } else {
                 wrist.setPosition(0.555);

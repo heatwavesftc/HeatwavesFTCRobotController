@@ -152,7 +152,9 @@ public class SpecStateHang extends TemplateAuto {
         sleep(1090);
 
         strafeLeft(0.7);
-        sleep(796);
+        sleep(866);
+
+
 
         claw.setPosition(1);
 

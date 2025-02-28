@@ -1,8 +1,10 @@
 package org.firstinspires.ftc.teamcode.FTCAutoCode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
+@Disabled
 @Autonomous
 public class specimenNetAuto2 extends TemplateAuto {
     public final static double WRIST_MIN_RANGE = 0.0;
