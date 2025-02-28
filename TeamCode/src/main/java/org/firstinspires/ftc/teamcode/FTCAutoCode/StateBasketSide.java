@@ -59,7 +59,7 @@ public class StateBasketSide extends TemplateAuto {
         sleep(800);
 
         moveFront(0.4);
-        sleep(1900);
+        sleep(2000);
 
         rotateRight(0.3);
         sleep(200);
