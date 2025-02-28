@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 @Autonomous
-public class netZone2 extends TemplateAuto {
+public class StateBasketSide extends TemplateAuto {
     public final static double WRIST_MIN_RANGE = 0.0;
     public final static double WRIST_MAX_RANGE = 0.555;
 
@@ -19,7 +19,7 @@ public class netZone2 extends TemplateAuto {
         motorRightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         waitForStart();
 
-        arm.setTargetPosition(50);
+        arm.setTargetPosition(150);
         arm.setPower(0.2);
         arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
@@ -44,7 +44,7 @@ public class netZone2 extends TemplateAuto {
         //first sample
 
         moveBack(0.4);
-        sleep(40);
+        sleep(100);
 
         sleep(200);
         intake.setPower(0);
@@ -52,20 +52,20 @@ public class netZone2 extends TemplateAuto {
         moveBack(0.2);
         sleep(390);
 
-        strafeRight(0.2);
+        strafeRight(0.4);
         sleep(200);
 
         rotateRight(0.5);
-        sleep(750);
+        sleep(875);
 
         moveFront(0.4);
         sleep(1900);
 
         rotateRight(0.3);
-        sleep(300);
+        sleep(400);
 
-        moveBack(0.5);
-        sleep(1600);
+        moveBack(0.4);
+        sleep(1870);
         //second sample
 
         moveFront(0.5);
@@ -75,7 +75,7 @@ public class netZone2 extends TemplateAuto {
         sleep(190);
 
         strafeLeft(0.4);
-        sleep(1000);
+        sleep(1200);
 
         moveBack(0.5);
         sleep(1700);
@@ -100,7 +100,7 @@ public class netZone2 extends TemplateAuto {
         strafeLeft(0);
 
         rotateRight(0.5);
-        sleep(650);
+        sleep(850);
 
         rotateRight(0);
 

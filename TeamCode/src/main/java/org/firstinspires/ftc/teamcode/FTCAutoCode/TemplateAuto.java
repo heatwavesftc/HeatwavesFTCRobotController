@@ -17,9 +17,14 @@ public class TemplateAuto extends LinearOpMode {
     protected DcMotor motorLeftBack = null;
     protected DcMotor arm;
     protected DcMotor slides = null;
+    protected DcMotor clawslides = null;
     //servo
     protected Servo wrist;
     protected CRServo intake;
+    protected Servo claw;
+
+    int CLAW_SLIDES_LOW = 0;
+    int CLAW_SLIDES_HIGH = -2150;
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -31,22 +36,31 @@ public class TemplateAuto extends LinearOpMode {
         slides = hardwareMap.get(DcMotor.class, "Slide");
         wrist = hardwareMap.get(Servo.class, "wrist");
         intake = hardwareMap.get(CRServo.class, "intake");
+        claw = hardwareMap.get(Servo.class, "claw");
+        clawslides = hardwareMap.get(DcMotor.class, "clawSlides");
 
         arm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         slides.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        clawslides.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
+        motorLeftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE );
+        motorLeftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE );
+        motorRightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE );
+        motorRightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE );
+
 
     }
 
     public void strafeLeft(double speed){
         motorLeftFront.setPower(-speed);
-        motorRightFront.setPower(1.1 * -speed);
+        motorRightFront.setPower(-speed);
         motorRightBack.setPower(speed);
         motorLeftBack.setPower(speed);
     }
 
     public void strafeRight(double speed){
         motorRightBack.setPower(-speed);
-        motorRightFront.setPower(1.1 * speed);
+        motorRightFront.setPower(speed);
         motorLeftBack.setPower(-speed);
         motorLeftFront.setPower(speed);
     }
@@ -68,14 +82,14 @@ public class TemplateAuto extends LinearOpMode {
 
     public void rotateRight(double speed){
         motorRightBack.setPower(speed);
-        motorRightFront.setPower(1.1 * speed);
+        motorRightFront.setPower(speed);
         motorLeftFront.setPower(speed);
         motorLeftBack.setPower(speed);
     }
 
     public void rotateLeft(double speed){
         motorRightBack.setPower(-speed);
-        motorRightFront.setPower(1.1 * -speed);
+        motorRightFront.setPower(-speed);
         motorLeftFront.setPower(-speed);
         motorLeftBack.setPower(-speed);
     }

@@ -45,7 +45,7 @@ public class heatwavesRobot extends OpMode {
         motorLeftBack = hardwareMap.get(DcMotor.class, "BL");
         motorLeftFront = hardwareMap.get(DcMotor.class, "FL");
         wrist = hardwareMap.get(Servo.class, "wrist");
-        clawslides = hardwareMap.get(DcMotor.class, "clawslides");
+        clawslides = hardwareMap.get(DcMotor.class, "clawSlides");
         claw = hardwareMap.get(Servo.class, "claw");
 
         arm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
@@ -124,13 +124,14 @@ public class heatwavesRobot extends OpMode {
                 clawslides.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             }
 
-            if (gamepad1.left_bumper) {
+            if (gamepad2.left_bumper) {
                 claw.setPosition(0);
             }
 
-            if (gamepad1.right_bumper) {
+            if (gamepad2.right_bumper) {
                 claw.setPosition(1);
             }
+
 
             telemetry.addData("Arm Position: ", arm.getCurrentPosition());
             telemetry.addData("Arm Target Pos: ", arm.getTargetPosition());

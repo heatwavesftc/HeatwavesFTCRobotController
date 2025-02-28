@@ -105,7 +105,7 @@ public class HeatwavesStateTeleOp extends OpMode {
             } else if (gamepad2.b) {
                 intake.setPower(-1.0);
             } else if (gamepad1.a) {
-                wrist.setPosition(0.2);
+                init();
             } else {
                 wrist.setPosition(0.555);
                 intake.setPower(0.0);
